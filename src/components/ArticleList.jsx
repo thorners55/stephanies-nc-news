@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
 import axios from "axios";
 import ArticlePreview from "./ArticlePreview";
 
@@ -11,12 +10,16 @@ class ArticleList extends Component {
   fetchArticles = () => {
     return axios
       .get("https://stephanies-news.herokuapp.com/api/articles")
-      .then(({ data }) => {
-        this.setState({ articles: data.articles });
+      .then(({ data: { articles } }) => {
+        this.setState({ articles });
       });
   };
 
-  formatArticles = () => {};
+  formatArticles = (body) => {
+    console.log(body);
+    const preview = body.split(" ");
+    return preview.slice(0, 30).join(" ");
+  };
 
   componentDidMount() {
     this.fetchArticles();
