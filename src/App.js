@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header";
+import { Router } from "@reach/router";
+import ArticleList from "./components/ArticleList";
+
 import NavBar from "./components/NavBar";
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <header>NC News</header>
         <NavBar />
+        <Router>
+          <ArticleList path="/" />
+        </Router>
       </div>
     );
   }
