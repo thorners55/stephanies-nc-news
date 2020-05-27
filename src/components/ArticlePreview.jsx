@@ -18,7 +18,7 @@ function ArticlePreview(props) {
   return (
     <>
       <header>
-        <Link to={`articles/${article_id}`}>{title}</Link>
+        <Link to={`/articles/${article_id}`}>{title}</Link>
       </header>
 
       <h1>
@@ -28,7 +28,7 @@ function ArticlePreview(props) {
       </h1>
       <p>
         {utils.formatArticles(body)}...
-        <Link to={`articles/${article_id}`}>See full article</Link>
+        <Link to={`/articles/${article_id}`}>See full article</Link>
         <br></br>
       </p>
     </>

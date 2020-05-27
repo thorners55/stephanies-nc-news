@@ -8,14 +8,27 @@ class ArticleList extends Component {
     isLoading: true,
   };
 
-  componentDidMount() {
-    api.fetchArticles().then((articles) => {
+  getArticles = (topic) => {
+    api.fetchArticles(topic).then((articles) => {
       this.setState({ articles, isLoading: false });
     });
+  };
+
+  componentDidMount() {
+    const { topic } = this.props;
+    this.getArticles(topic);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { topic } = this.props;
+    if (prevProps.topic !== topic) {
+      this.getArticles(topic);
+    }
   }
 
   render() {
     if (this.state.isLoading) return <p>LOADING...</p>;
+
     return (
       <ul>
         {this.state.articles.map((article) => {

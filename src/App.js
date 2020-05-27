@@ -7,13 +7,19 @@ import Article from "./components/Article";
 import NavBar from "./components/NavBar";
 
 class App extends Component {
+  state = {
+    username: "grumpy19",
+  };
+
   render() {
     return (
       <div>
         <header>NC News</header>
         <NavBar />
+        <span>Logged in as {this.state.username}</span>
         <Router>
           <ArticleList path="/" />
+          <ArticleList path="/topics/:topic" />
           <Article path="/articles/:article_id" />
         </Router>
       </div>

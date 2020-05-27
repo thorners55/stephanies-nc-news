@@ -41,6 +41,7 @@ class Article extends Component {
       <>
         <h1>{title}</h1>
         <br></br>
+        <span>{votes} votes</span>
         <h2>
           {author} in {topic}
           <br></br>
@@ -49,7 +50,7 @@ class Article extends Component {
         <br></br>
         <p>{body}</p>
         <p>
-          <h3>Comments</h3>
+          <h3>{comment_count} Comments</h3>
 
           <Comments articleId={article_id} />
         </p>
