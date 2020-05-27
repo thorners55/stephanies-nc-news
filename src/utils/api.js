@@ -26,3 +26,14 @@ export const fetchComments = (articleId) => {
       return comments;
     });
 };
+
+export const addArticleComment = (articleId, comment) => {
+  return axios
+    .post(
+      `https://stephanies-news.herokuapp.com/api/articles/${articleId}/comments`,
+      comment
+    )
+    .then(({ response }) => {
+      return response;
+    });
+};

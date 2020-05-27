@@ -8,3 +8,7 @@ export const formatArticles = (body) => {
   const preview = body.split(" ");
   return preview.slice(0, 30).join(" ");
 };
+
+export const capitaliseFunc = (word) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};

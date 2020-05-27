@@ -1,11 +1,20 @@
 import React, { Component } from "react";
 import PostComment from "./PostComment.jsx";
+
 import * as api from "../utils/api.js";
 
 class Comments extends Component {
   state = {
     comments: [],
     isLoading: true,
+  };
+
+  addComment = (commentObj) => {
+    const { articleId } = this.props;
+    console.dir(commentObj);
+    /*api.addArticleComment(articleId, commentObj).then((response) => {
+      console.dir(response); 
+    }); */
   };
 
   componentDidMount() {
@@ -20,13 +29,12 @@ class Comments extends Component {
     if (this.state.isLoading) return <h3>Loading comments...</h3>;
     return (
       <>
-        <PostComment />
-        <h3>Comments</h3>
+        <PostComment addComment={this.addComment} />
         <ul>
           {this.state.comments.map((comment) => {
-            let { author, body, created_at } = comment;
+            let { author, body, created_at, comment_id } = comment;
             return (
-              <li>
+              <li key={comment_id}>
                 {author} at {created_at}
                 <br></br>
                 {body}

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Axios from "axios";
 import Comments from "./Comments.jsx";
 
+import * as utils from "../utils/utils.js";
+
 class Article extends Component {
   state = {
     article: {},
@@ -24,7 +26,7 @@ class Article extends Component {
   render() {
     console.log("Rendering...");
     if (this.state.isLoading) return <p>Loading...</p>;
-    const {
+    let {
       article_id,
       title,
       body,
@@ -34,19 +36,21 @@ class Article extends Component {
       created_at,
       comment_count,
     } = this.state.article;
-
+    topic = utils.capitaliseFunc(topic);
     return (
       <>
         <h1>{title}</h1>
         <br></br>
         <h2>
-          {author} in {topic} topic
+          {author} in {topic}
           <br></br>
           Created at {created_at}
         </h2>
         <br></br>
         <p>{body}</p>
         <p>
+          <h3>Comments</h3>
+
           <Comments articleId={article_id} />
         </p>
       </>
