@@ -3,6 +3,7 @@ import "./App.css";
 import { Router } from "@reach/router";
 import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
+import User from "./components/User";
 
 import NavBar from "./components/NavBar";
 
@@ -21,6 +22,7 @@ class App extends Component {
           <ArticleList path="/" />
           <ArticleList path="/topics/:topic" />
           <Article path="/articles/:article_id" />
+          <User path="/user/:username" />
         </Router>
       </div>
     );

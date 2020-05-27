@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 import PostComment from "./PostComment.jsx";
 
 import * as api from "../utils/api.js";
@@ -34,9 +35,10 @@ class Comments extends Component {
         <ul>
           {this.state.comments.map((comment) => {
             let { author, body, created_at, comment_id, votes } = comment;
+
             return (
               <li key={comment_id}>
-                {author} at {created_at}
+                <Link to={`/user/${author}`}>{author}</Link> at {created_at}
                 <br></br>
                 {votes} votes<br></br>
                 {body}
