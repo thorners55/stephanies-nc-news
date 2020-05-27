@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import Axios from "axios";
+import Comments from "./Comments.jsx";
 
 class Article extends Component {
   state = {
@@ -34,7 +34,7 @@ class Article extends Component {
       created_at,
       comment_count,
     } = this.state.article;
-    console.log(body);
+
     return (
       <>
         <h1>{title}</h1>
@@ -46,6 +46,9 @@ class Article extends Component {
         </h2>
         <br></br>
         <p>{body}</p>
+        <p>
+          <Comments articleId={article_id} />
+        </p>
       </>
     );
   }

@@ -15,3 +15,14 @@ export const fetchTopics = () => {
       return topics;
     });
 };
+
+export const fetchComments = (articleId) => {
+  return axios
+    .get(
+      `https://stephanies-news.herokuapp.com/api/articles/${articleId}/comments`
+    )
+    .then(({ data: { comments } }) => {
+      console.dir(comments);
+      return comments;
+    });
+};
