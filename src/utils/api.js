@@ -52,3 +52,9 @@ export const getUser = (username) => {
       return user;
     });
 };
+
+export const deleteComment = (commentId) => {
+  return axios.delete(
+    `https://stephanies-news.herokuapp.com/api/comments/${commentId}`
+  );
+};

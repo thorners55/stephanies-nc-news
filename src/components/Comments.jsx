@@ -20,17 +20,40 @@ class Comments extends Component {
     });
   };
 
-  componentDidMount() {
+  removeComment = (event) => {
+    const { name } = event.target;
+    const updatedComments = this.state.comments.map((comment) => {
+      return comment.comment_id !== name;
+    });
+    this.setState({ comments: updatedComments, isLoading: true });
+    api.deleteComment(name).then(() => {
+      this.updateCommentData();
+    });
+  };
+
+  updateCommentData = () => {
     const { articleId } = this.props;
     api.fetchComments(articleId).then((comments) => {
       this.setState({ comments, isLoading: false });
     });
+  };
+
+  componentDidMount() {
+    this.updateCommentData();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.comments.length !== this.state.comments.length) {
+      this.updateCommentData();
+    }
   }
 
   render() {
     if (this.state.isLoading) return <h3>Loading comments...</h3>;
+
     return (
       <>
+        <h3>{this.state.comments.length} Comments</h3>
         <PostComment addComment={this.addComment} />
         <ul>
           {this.state.comments.map((comment) => {
@@ -42,6 +65,12 @@ class Comments extends Component {
                 <br></br>
                 {votes} votes<br></br>
                 {body}
+                <br></br>
+                {this.props.username === author && (
+                  <button onClick={this.removeComment} name={comment_id}>
+                    Delete
+                  </button>
+                )}
               </li>
             );
           })}

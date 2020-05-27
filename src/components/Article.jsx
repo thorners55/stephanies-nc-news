@@ -34,7 +34,6 @@ class Article extends Component {
       topic,
       author,
       created_at,
-      comment_count,
     } = this.state.article;
     topic = utils.capitaliseFunc(topic);
     return (
@@ -50,9 +49,7 @@ class Article extends Component {
         <br></br>
         <p>{body}</p>
         <p>
-          <h3>{comment_count} Comments</h3>
-
-          <Comments articleId={article_id} />
+          <Comments articleId={article_id} username={this.props.username} />
         </p>
       </>
     );
