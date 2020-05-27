@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+
 import Axios from "axios";
 
 class Article extends Component {
@@ -13,7 +13,6 @@ class Article extends Component {
       `https://stephanies-news.herokuapp.com/api/articles/${this.props.article_id}`
     ).then(({ data: { article } }) => {
       this.setState({ article, isLoading: false });
-      console.log(this.state);
     });
   };
 
@@ -35,6 +34,7 @@ class Article extends Component {
       created_at,
       comment_count,
     } = this.state.article;
+    console.log(body);
     return (
       <>
         <h1>{title}</h1>

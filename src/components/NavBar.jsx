@@ -1,27 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
-import axios from "axios";
+import * as api from "../utils/api.js";
+import { formatTopics } from "../utils/utils.js";
 
 class NavBar extends Component {
   state = {
     topics: [],
   };
 
-  fetchTopics = () => {
-    return axios
-      .get("https://stephanies-news.herokuapp.com/api/topics")
-      .then(({ data: { topics } }) => {
-        return topics.map(({ slug }) => {
-          return slug.charAt(0).toUpperCase() + slug.slice(1);
-        });
+  componentDidMount() {
+    api
+      .fetchTopics()
+      .then((topics) => {
+        return formatTopics(topics);
       })
       .then((topics) => {
         this.setState({ topics });
       });
-  };
-
-  componentDidMount() {
-    this.fetchTopics();
   }
 
   render() {

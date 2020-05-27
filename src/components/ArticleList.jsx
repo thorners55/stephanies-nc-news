@@ -1,40 +1,28 @@
 import React, { Component } from "react";
-import axios from "axios";
 import ArticlePreview from "./ArticlePreview";
+import * as api from "../utils/api.js";
 
 class ArticleList extends Component {
   state = {
     articles: [],
-  };
-
-  fetchArticles = () => {
-    return axios
-      .get("https://stephanies-news.herokuapp.com/api/articles")
-      .then(({ data: { articles } }) => {
-        this.setState({ articles });
-      });
-  };
-
-  formatArticles = (body) => {
-    console.log(body);
-    const preview = body.split(" ");
-    return preview.slice(0, 30).join(" ");
+    isLoading: true,
   };
 
   componentDidMount() {
-    this.fetchArticles();
+    api.fetchArticles().then((articles) => {
+      this.setState({ articles, isLoading: false });
+    });
   }
 
   render() {
+    if (this.state.isLoading) return <p>LOADING...</p>;
     return (
       <ul>
         {this.state.articles.map((article) => {
+          let { article_id } = article;
           return (
-            <li>
-              <ArticlePreview
-                article={article}
-                formatArticles={this.formatArticles}
-              />
+            <li key={article_id}>
+              <ArticlePreview article={article} />
             </li>
           );
         })}
