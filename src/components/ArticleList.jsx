@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ArticlePreview from "./ArticlePreview";
+import SortButtons from "./SortButtons.jsx";
 import * as api from "../utils/api.js";
 
 class ArticleList extends Component {
@@ -10,6 +11,13 @@ class ArticleList extends Component {
 
   getArticles = (topic, username) => {
     api.fetchArticles(topic, username).then((articles) => {
+      this.setState({ articles, isLoading: false });
+    });
+  };
+
+  getArticlesByQuery = (sort_by, order) => {
+    api.fetchArticlesByQuery(sort_by, order).then((articles) => {
+      console.dir(articles);
       this.setState({ articles, isLoading: false });
     });
   };
@@ -31,16 +39,21 @@ class ArticleList extends Component {
     if (this.state.isLoading) return <p>LOADING...</p>;
 
     return (
-      <ul>
-        {this.state.articles.map((article) => {
-          let { article_id } = article;
-          return (
-            <li key={article_id}>
-              <ArticlePreview article={article} />
-            </li>
-          );
-        })}
-      </ul>
+      <>
+        <br></br>
+        <span>Sort by: </span>
+        <SortButtons getArticlesByQuery={this.getArticlesByQuery} />
+        <ul>
+          {this.state.articles.map((article) => {
+            let { article_id } = article;
+            return (
+              <li key={article_id}>
+                <ArticlePreview article={article} />
+              </li>
+            );
+          })}
+        </ul>
+      </>
     );
   }
 }

@@ -23,7 +23,6 @@ class Comments extends Component {
 
   removeComment = (event) => {
     const { name } = event.target;
-    this.state.commentToDelete = name;
 
     const updatedComments = this.state.comments.filter((comment) => {
       return comment.comment_id !== parseInt(name);

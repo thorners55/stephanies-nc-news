@@ -6,8 +6,21 @@ export const fetchArticles = (topic, author) => {
       params: {
         topic,
         author,
+        /*sort_by,
+        order,*/
       },
     })
+    .then(({ data: { articles } }) => {
+      return articles;
+    });
+};
+
+export const fetchArticlesByQuery = (sort_by, order) => {
+  console.log(sort_by);
+  return axios
+    .get(
+      `https://stephanies-news.herokuapp.com/api/articles?author&sort_by=${sort_by}&order=${order}`
+    )
     .then(({ data: { articles } }) => {
       return articles;
     });

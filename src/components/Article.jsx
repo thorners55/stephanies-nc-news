@@ -12,9 +12,8 @@ class Article extends Component {
   };
 
   fetchArticle = () => {
-    return Axios.get(
-      `https://stephanies-news.herokuapp.com/api/articles/${this.props.article_id}`
-    ).then(({ data: { article } }) => {
+    const { article_id, topic } = this.state.article;
+    api.fetchArticles(topic, article_id).then(({ data: { article } }) => {
       this.setState({ article, isLoading: false });
     });
   };
