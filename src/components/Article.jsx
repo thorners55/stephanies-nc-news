@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 import Comments from "./Comments.jsx";
-
+import VoteUpdater from "./VoteUpdater.jsx";
+import * as api from "../utils/api.js";
 import * as utils from "../utils/utils.js";
 
 class Article extends Component {
@@ -25,6 +26,7 @@ class Article extends Component {
 
   render() {
     console.log("Rendering...");
+    console.dir(this.state.article);
     if (this.state.isLoading) return <p>Loading...</p>;
     let {
       article_id,
@@ -40,7 +42,7 @@ class Article extends Component {
       <>
         <h1>{title}</h1>
         <br></br>
-        <span>{votes} votes</span>
+        <VoteUpdater votes={votes} articleId={article_id} />
         <h2>
           {author} in {topic}
           <br></br>

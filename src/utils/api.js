@@ -58,3 +58,14 @@ export const deleteComment = (commentId) => {
     `https://stephanies-news.herokuapp.com/api/comments/${commentId}`
   );
 };
+
+export const patchVote = (articleId, vote) => {
+  console.log(vote);
+  return axios
+    .patch(`https://stephanies-news.herokuapp.com/api/articles/${articleId}`, {
+      inc_votes: vote,
+    })
+    .then(({ data: { article } }) => {
+      return article;
+    });
+};
