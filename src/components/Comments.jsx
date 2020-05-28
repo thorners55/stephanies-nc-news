@@ -42,16 +42,18 @@ class Comments extends Component {
 
   render() {
     console.dir(this.state);
+    console.log(this.props.username);
+    const { username } = this.props;
 
     return (
       <>
         <h3>{this.state.comments.length} Comments</h3>
-        <PostComment addComment={this.addComment} />
+        <PostComment addComment={this.addComment} username={username} />
         {this.state.comments.map((comment) => {
           return (
             <CommentCard
               comment={comment}
-              username={this.props.username}
+              username={username}
               removeComment={this.removeComment}
             />
           );

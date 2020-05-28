@@ -4,12 +4,16 @@ import { Router } from "@reach/router";
 import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
 import User from "./components/User";
-
 import NavBar from "./components/NavBar";
+import LogIn from "./components/LogIn";
 
 class App extends Component {
   state = {
     username: "grumpy19",
+  };
+
+  updateUser = (username) => {
+    this.setState({ username });
   };
 
   render() {
@@ -17,7 +21,8 @@ class App extends Component {
       <div>
         <header>NC News</header>
         <NavBar />
-        <span>Logged in as {this.state.username}</span>
+
+        <LogIn updateUser={this.updateUser} username={this.state.username} />
         <Router>
           <ArticleList path="/" />
           <ArticleList path="/topics/:topic" />

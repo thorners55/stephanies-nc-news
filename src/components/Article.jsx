@@ -12,8 +12,8 @@ class Article extends Component {
   };
 
   fetchArticle = () => {
-    const { article_id, topic } = this.state.article;
-    api.fetchArticles(topic, article_id).then(({ data: { article } }) => {
+    const { article_id } = this.props;
+    api.fetchArticle(article_id).then(({ article }) => {
       this.setState({ article, isLoading: false });
     });
   };
@@ -27,37 +27,42 @@ class Article extends Component {
     console.log("Rendering...");
 
     if (this.state.isLoading) return <p>Loading...</p>;
-    let {
-      article_id,
-      title,
-      body,
-      votes,
-      topic,
-      author,
-      created_at,
-    } = this.state.article;
-    topic = utils.capitaliseFunc(topic);
-    return (
-      <>
-        <h1>{title}</h1>
-        <br></br>
-        <VoteUpdater
-          votes={votes}
-          id={article_id}
-          commentOrArticle={"articles"}
-        />
-        <h2>
-          {author} in {topic}
+    else {
+      console.dir(this.state);
+
+      let {
+        article_id,
+        title,
+        body,
+        votes,
+        topic,
+        author,
+        created_at,
+      } = this.state.article;
+
+      topic = utils.capitaliseFunc(topic);
+      return (
+        <>
+          <h1>{title}</h1>
           <br></br>
-          Created at {created_at}
-        </h2>
-        <br></br>
-        <p>{body}</p>
-        <p>
-          <Comments articleId={article_id} username={this.props.username} />
-        </p>
-      </>
-    );
+          <VoteUpdater
+            votes={votes}
+            id={article_id}
+            commentOrArticle={"articles"}
+          />
+          <h2>
+            {author} in {topic}
+            <br></br>
+            Created at {created_at}
+          </h2>
+          <br></br>
+          <p>{body}</p>
+          <p>
+            <Comments articleId={article_id} username={this.props.username} />
+          </p>
+        </>
+      );
+    }
   }
 }
 

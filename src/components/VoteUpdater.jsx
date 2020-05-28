@@ -25,7 +25,7 @@ class VoteUpdater extends Component {
   render() {
     const { votes } = this.props;
     const updatedVotes = votes + this.state.votes;
-    console.log(this.state);
+
     return (
       <>
         <span>{updatedVotes} votes</span>

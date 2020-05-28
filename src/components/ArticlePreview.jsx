@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
 import * as utils from "../utils/utils";
-//import * as api from
-//api.whateverfunc
 
 function ArticlePreview(props) {
   const {

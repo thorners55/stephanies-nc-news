@@ -2,21 +2,30 @@ import React, { Component } from "react";
 
 class PostComment extends Component {
   state = {
-    username: "grumpy19",
+    username: "",
     body: "",
   };
 
   handleChange = (event) => {
-    const { name } = event.target;
-    this.setState({ [name]: event.target.value });
+    const { value } = event.target;
+
+    this.setState((currentState) => {
+      return { ...currentState, body: value };
+    });
+    console.dir(this.state.body);
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.comment < 4) return;
+    if (this.state.body < 4) return;
     this.props.addComment(this.state);
-    this.setState({ username: "grumpy19", body: "" });
+    this.setState({ username: this.props.username, body: "" });
   };
+
+  componentDidMount() {
+    const { username } = this.props;
+    this.setState({ username, body: "" });
+  }
 
   render() {
     return (

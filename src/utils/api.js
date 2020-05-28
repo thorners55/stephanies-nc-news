@@ -1,5 +1,14 @@
 import axios from "axios";
 
+export const fetchArticle = (articleId) => {
+  console.log("inside fetchArticle");
+  return axios
+    .get(`https://stephanies-news.herokuapp.com/api/articles/${articleId}`)
+    .then(({ data }) => {
+      return data;
+    });
+};
+
 export const fetchArticles = (topic, author) => {
   return axios
     .get("https://stephanies-news.herokuapp.com/api/articles", {
@@ -11,6 +20,7 @@ export const fetchArticles = (topic, author) => {
       },
     })
     .then(({ data: { articles } }) => {
+      console.dir(articles);
       return articles;
     });
 };
