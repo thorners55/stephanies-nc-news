@@ -1,11 +1,8 @@
 import axios from "axios";
 
 export const fetchArticles = (topic, author) => {
-  // football / coding
-  // const lcTopic = topic.toLowerCase();
   return axios
     .get("https://stephanies-news.herokuapp.com/api/articles", {
-      // ?topic=football
       params: {
         topic,
         author,
@@ -59,13 +56,13 @@ export const deleteComment = (commentId) => {
   );
 };
 
-export const patchVote = (articleId, vote) => {
+export const patchVote = (id, path, vote) => {
   console.log(vote);
   return axios
-    .patch(`https://stephanies-news.herokuapp.com/api/articles/${articleId}`, {
+    .patch(`https://stephanies-news.herokuapp.com/api/${path}/${id}`, {
       inc_votes: vote,
     })
-    .then(({ data: { article } }) => {
-      return article;
+    .then(({ data }) => {
+      return data;
     });
 };

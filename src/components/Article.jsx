@@ -26,7 +26,7 @@ class Article extends Component {
 
   render() {
     console.log("Rendering...");
-    console.dir(this.state.article);
+
     if (this.state.isLoading) return <p>Loading...</p>;
     let {
       article_id,
@@ -42,7 +42,11 @@ class Article extends Component {
       <>
         <h1>{title}</h1>
         <br></br>
-        <VoteUpdater votes={votes} articleId={article_id} />
+        <VoteUpdater
+          votes={votes}
+          id={article_id}
+          commentOrArticle={"articles"}
+        />
         <h2>
           {author} in {topic}
           <br></br>

@@ -9,15 +9,16 @@ class VoteUpdater extends Component {
   };
 
   handleVote = (event) => {
+    const { votes } = this.state;
     const { name } = event.target;
     if (this.state[name]) return;
     let newVote = 0;
     newVote = name === "upvote" ? 1 : -1;
-    this.setState({ votes: newVote, [name]: true });
+    this.setState({ votes: votes + newVote, [name]: true });
 
-    const { articleId } = this.props;
-    api.patchVote(articleId, newVote).then((article) => {
-      console.dir(article);
+    const { id, commentOrArticle } = this.props;
+    api.patchVote(id, commentOrArticle, newVote).then((data) => {
+      console.dir(data);
     });
   };
 

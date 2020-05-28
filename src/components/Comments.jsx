@@ -26,12 +26,11 @@ class Comments extends Component {
     this.state.commentToDelete = name;
 
     const updatedComments = this.state.comments.filter((comment) => {
-      console.log(comment.comment_id !== parseInt(name));
       return comment.comment_id !== parseInt(name);
     });
 
     this.setState({ comments: updatedComments });
-    console.dir(this.state);
+
     api.deleteComment(name);
   };
 
