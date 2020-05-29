@@ -15,7 +15,19 @@ class App extends Component {
 
   updateUser = (username) => {
     this.setState({ username });
+    localStorage.setItem("username", JSON.stringify(username));
   };
+
+  retrieveUsername = () => {
+    const gotUsername = localStorage.getItem("username");
+    const user = JSON.parse(gotUsername);
+
+    this.setState({ username: user });
+  };
+
+  componentDidMount() {
+    this.retrieveUsername();
+  }
 
   render() {
     return (

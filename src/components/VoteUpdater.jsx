@@ -8,35 +8,39 @@ class VoteUpdater extends Component {
     downvote: false,
   };
 
-  handleVote = (event) => {
-    const { votes } = this.state;
-    const { name } = event.target;
-    if (this.state[name]) return;
-    let newVote = 0;
-    newVote = name === "upvote" ? 1 : -1;
-    this.setState({ votes: votes + newVote, [name]: true });
-
-    const { id, commentOrArticle } = this.props;
-    api.patchVote(id, commentOrArticle, newVote).then((data) => {
-      console.dir(data);
+  handleVote = (newVote, button) => {
+    this.setState((currentState) => {
+      return { votes: currentState.votes + newVote, [button]: true };
     });
+    const { id, commentOrArticle } = this.props;
+
+    api.patchVote(id, commentOrArticle, newVote);
   };
 
   render() {
     const { votes } = this.props;
-    const updatedVotes = votes + this.state.votes;
+    const { upvote, downvote } = this.state;
+    const updatedVote = votes + this.state.votes;
 
     return (
       <>
         <section>
-          {updatedVotes} votes
+          {updatedVote} votes
           <br></br>
-          <button onClick={this.handleVote} name="upvote">
+          <button
+            onClick={() => this.handleVote(1, "upvote")}
+            name="upvote"
+            disabled={upvote}
+          >
             <span role="img" aria-label="Happy face emoji">
               🙂{" "}
             </span>
           </button>
-          <button onClick={this.handleVote} name="downvote">
+          <button
+            onClick={() => this.handleVote(-1, "downvote")}
+            name="downvote"
+            disabled={downvote}
+          >
             {" "}
             <span role="img" aria-label="Sad face emoji">
               🙁

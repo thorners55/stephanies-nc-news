@@ -8,6 +8,8 @@ class ArticleList extends Component {
   state = {
     articles: [],
     isLoading: true,
+    sort: "created_at",
+    order: "desc",
     err: "",
   };
 
@@ -15,7 +17,7 @@ class ArticleList extends Component {
     api
       .fetchArticles(topic, author, sort, order)
       .then((articles) => {
-        this.setState({ articles, isLoading: false });
+        this.setState({ articles, isLoading: false, sort, order });
       })
       .catch((err) => {
         const {
@@ -29,13 +31,16 @@ class ArticleList extends Component {
 
   componentDidMount() {
     const { topic, username } = this.props;
-    this.getArticles(topic, username);
+    const { sort, order } = this.state;
+
+    this.getArticles(topic, username, sort, order);
   }
 
   componentDidUpdate(prevProps, prevState) {
     const { topic } = this.props;
+    const { sort, order } = this.state;
     if (prevProps.topic !== topic) {
-      this.getArticles(topic);
+      this.getArticles(topic, undefined, sort, order);
     }
   }
 

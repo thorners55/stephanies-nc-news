@@ -8,7 +8,6 @@ class SortButtons extends Component {
 
   handleClick = (event) => {
     event.preventDefault();
-
     const { name, value } = event.target;
     this.setState((currentState) => {
       return { ...currentState, [name]: value };

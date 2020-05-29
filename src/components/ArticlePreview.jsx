@@ -20,7 +20,8 @@ function ArticlePreview(props) {
       </header>
 
       <h1>
-        By {author} in {topic} topic, created at {created_at}
+        By <Link to={`/user/${author}`}>{author}</Link> in {topic} topic,
+        created at {created_at}
         <br></br>
         {comment_count} comments, {votes} votes
       </h1>

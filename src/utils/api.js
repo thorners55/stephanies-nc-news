@@ -9,7 +9,6 @@ export const fetchArticle = (articleId) => {
 };
 
 export const fetchArticles = (topic, author, sort_by, order) => {
-  console.log(topic, author, sort_by, order);
   return axios
     .get(`https://stephanies-news.herokuapp.com/api/articles`, {
       params: {
@@ -20,25 +19,9 @@ export const fetchArticles = (topic, author, sort_by, order) => {
       },
     })
     .then(({ data: { articles } }) => {
-      console.dir(articles);
       return articles;
     });
 };
-// https://stephanies-news.herokuapp.com/api/articles?sort_by=comment_count&order=desc
-
-/*export const fetchArticlesByQuery = (sort_by, order) => {
-  console.log(sort_by);
-  return axios
-    .get(
-      `https://stephanies-news.herokuapp.com/api/articles?author&sort_by=${sort_by}&order=${order}`
-    )
-    .then(({ data: { articles } }) => {
-      return articles;
-    });
-
-};*/
-
-//`https://stephanies-news.herokuapp.com/api/articles?author&sort_by=${sort_by}&order=${order}`
 
 export const fetchTopics = () => {
   return axios

@@ -35,7 +35,6 @@ class User extends Component {
     if (err) return <ErrorDisplay msg={err} />;
     const { username } = this.props;
     const { avatar_url, name } = this.state;
-    console.log(username);
     return (
       <>
         <h1>{username}</h1>

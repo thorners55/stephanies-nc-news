@@ -8,12 +8,10 @@ import * as api from "../utils/api.js";
 class Comments extends Component {
   state = {
     comments: [],
-    commentToDelete: "",
   };
 
   addComment = (commentObj) => {
     const { articleId } = this.props;
-    console.dir(commentObj);
     api.addArticleComment(articleId, commentObj).then((comment) => {
       this.setState((currentState) => {
         return { comments: [comment, ...currentState.comments] };
@@ -23,10 +21,13 @@ class Comments extends Component {
 
   removeComment = (event) => {
     const { name } = event.target;
-    const updatedComments = this.state.comments.filter((comment) => {
-      return comment.comment_id !== parseInt(name);
+    this.setState((currentState) => {
+      return {
+        comments: currentState.comments.filter((comment) => {
+          return comment.comment_id !== parseInt(name);
+        }),
+      };
     });
-    this.setState({ comments: updatedComments });
     api.deleteComment(name);
   };
 

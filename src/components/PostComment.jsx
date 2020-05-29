@@ -38,6 +38,7 @@ class PostComment extends Component {
                 name="body"
                 placeholder="Type comment here..."
                 onChange={this.handleChange}
+                required
               ></input>
             </label>
             <br></br>
