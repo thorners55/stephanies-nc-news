@@ -8,11 +8,7 @@ class PostComment extends Component {
 
   handleChange = (event) => {
     const { value } = event.target;
-
-    this.setState((currentState) => {
-      return { ...currentState, body: value };
-    });
-    console.dir(this.state.body);
+    this.setState({ username: this.props.username, body: value });
   };
 
   handleSubmit = (event) => {
@@ -24,7 +20,7 @@ class PostComment extends Component {
 
   componentDidMount() {
     const { username } = this.props;
-    this.setState({ username, body: "" });
+    this.setState({ username: "", body: "" });
   }
 
   render() {

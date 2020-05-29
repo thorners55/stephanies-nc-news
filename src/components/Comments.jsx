@@ -23,13 +23,10 @@ class Comments extends Component {
 
   removeComment = (event) => {
     const { name } = event.target;
-
     const updatedComments = this.state.comments.filter((comment) => {
       return comment.comment_id !== parseInt(name);
     });
-
     this.setState({ comments: updatedComments });
-
     api.deleteComment(name);
   };
 
@@ -41,9 +38,9 @@ class Comments extends Component {
   }
 
   render() {
-    console.dir(this.state);
-    console.log(this.props.username);
+    console.log("rendering");
     const { username } = this.props;
+    console.log(username);
 
     return (
       <>

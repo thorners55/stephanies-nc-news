@@ -6,6 +6,7 @@ class CommentCard extends Component {
   render() {
     console.log("rendering in commentcard");
     const { comment_id, author, created_at, votes, body } = this.props.comment;
+    console.log(author);
 
     return (
       <ul>
