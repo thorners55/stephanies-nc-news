@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Axios from "axios";
 import Comments from "./Comments.jsx";
 import VoteUpdater from "./VoteUpdater.jsx";
+import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 import * as utils from "../utils/utils.js";
 
@@ -9,13 +9,36 @@ class Article extends Component {
   state = {
     article: {},
     isLoading: true,
+    err: "",
   };
 
   fetchArticle = () => {
     const { article_id } = this.props;
-    api.fetchArticle(article_id).then(({ article }) => {
+    api
+      .fetchArticle(article_id)
+      .then(({ article }) => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch((err) => {
+        console.dir(err.response);
+        const {
+          data: { msg },
+          status,
+        } = err.response;
+        this.setState({ err: status + " " + msg, isLoading: false });
+      });
+    /* try {
+      const { article_id } = this.props;
+      const article = api.fetchArticle(article_id);
       this.setState({ article, isLoading: false });
-    });
+    } catch (err) {
+      console.dir(err.response);
+      const {
+        data: { msg },
+        status,
+      } = err.response;
+      this.setState({ err: status + " " + msg, isLoading: false });
+    } */
   };
 
   componentDidMount() {
@@ -25,8 +48,11 @@ class Article extends Component {
 
   render() {
     console.log("Rendering...");
+    const { isLoading, err, article } = this.state;
+    console.dir(this.state);
 
-    if (this.state.isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...</p>;
+    if (err) return <ErrorDisplay msg={err} />;
     else {
       console.dir(this.state);
 
@@ -38,7 +64,7 @@ class Article extends Component {
         topic,
         author,
         created_at,
-      } = this.state.article;
+      } = article;
 
       topic = utils.capitaliseFunc(topic);
       return (

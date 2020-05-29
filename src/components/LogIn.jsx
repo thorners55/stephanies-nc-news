@@ -31,6 +31,7 @@ class LogIn extends Component {
             <option value="grumpy19">grumpy19</option>
             <option value="happyamy2016">happyamy2016</option>
             <option value="jessjelly">jessjelly</option>
+            <option value="cooljmessy">cooljmessy</option>
           </select>
           <input type="submit"></input>
         </form>

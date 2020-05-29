@@ -36,8 +36,8 @@ class ArticleList extends Component {
   }
 
   render() {
+    console.log("rendering article list");
     if (this.state.isLoading) return <p>LOADING...</p>;
-
     return (
       <>
         <br></br>
