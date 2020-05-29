@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Stephanie's NC News
 
-## Available Scripts
+## README - write your own and make sure that it:
 
-In the project directory, you can run:
+- [ ] has a link to the deployed version
+- [ ] provides general info about your app
+- [ ] includes links to your back end repo
+- [ ] specifies the minimum version of Node required to run locally (check your Node version, `node --version` and use the major version that you are on)
+- [ ] has clear instructions on how to run your project locally (`git clone <repo-url>, cd ...`)
 
-### `npm start`
+// Need to put all of the dependencies used in creating API? Do we need to write that I seeded and tested it etc?
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Links
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Deployed version: https://stephanies-nc-news.netlify.com
+- Repository for backend API functionality https://github.com/thorners55/nc-news
 
-### `npm test`
+# General app information
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Made as part of Northcoders coursework - created the API using PSQL and hosted using Heroku. The repository for backend functionality can be found at https://github.com/thorners55/nc-news
+- General idea is a news site, similar to Reddit - a user can post comments, delete your comments, vote on articles, etc. At the moment there is no functionality to post your own article - all articles available on the site were manually seeded into the database.
+- A site user can choose their username from a dropdown list. Users are free to change which user they are at any time. Upon a site user's first visit, they are automatically logged in as cooljmessy. Once they have changed to a different user, this is saved in local storage, and will automatically load up as that user the next time the site is visited or the page is refreshed.
+- Site users can view all articles, or view articles by topic. From the drop down list, users can choose to sort articles by the date posted, the comment count, or the votes, in ascending or descending order (defaults to descending). Site users can view the profile for a particular username, which includes articles written by that username.
+- Using the address bar, it is also possible for a user to request to view articles by author, title, article_id, created_at, votes, or comment_count, and sort by asc or desc. Further information for endpoints are available at https://stephanies-news.herokuapp.com/api/
+- Article, topic, and user request URLs work by chaining the everything after /api/ onto https://stephanies-nc-news.netlify.com , e.g. https://stephanies-nc-news.netlify.com/topics/cooking
 
-### `npm run build`
+# Requirements
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- At least Node.js version 13
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# How to run
