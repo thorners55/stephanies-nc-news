@@ -40,7 +40,7 @@ class User extends Component {
       <>
         <h1>{username}</h1>
         <br></br>
-        <div>{name}</div>
+        {name}
         <br></br>
         <img src={avatar_url} alt={`${username}'s avatar`}></img>
 

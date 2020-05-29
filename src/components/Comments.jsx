@@ -38,23 +38,24 @@ class Comments extends Component {
   }
 
   render() {
-    console.log("rendering");
     const { username } = this.props;
-    console.log(username);
 
     return (
       <>
-        <h3>{this.state.comments.length} Comments</h3>
-        <PostComment addComment={this.addComment} username={username} />
-        {this.state.comments.map((comment) => {
-          return (
-            <CommentCard
-              comment={comment}
-              username={username}
-              removeComment={this.removeComment}
-            />
-          );
-        })}
+        <section>
+          <div>{this.state.comments.length} Comments</div>
+          <PostComment addComment={this.addComment} username={username} />
+          {this.state.comments.map((comment) => {
+            return (
+              <CommentCard
+                key={comment.comment_id}
+                comment={comment}
+                username={username}
+                removeComment={this.removeComment}
+              />
+            );
+          })}
+        </section>
       </>
     );
   }

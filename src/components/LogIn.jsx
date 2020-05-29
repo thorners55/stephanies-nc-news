@@ -21,20 +21,22 @@ class LogIn extends Component {
   render() {
     return (
       <>
-        <span>Logged in as {this.props.username}</span>
-        <br></br>
-        Change user:<br></br>
-        <form onSubmit={this.handleSubmit}>
-          <select id="username" onChange={this.handleClick}>
-            <option value="weegembump">weegembump</option>
-            <option value="tickle122">tickle122</option>
-            <option value="grumpy19">grumpy19</option>
-            <option value="happyamy2016">happyamy2016</option>
-            <option value="jessjelly">jessjelly</option>
-            <option value="cooljmessy">cooljmessy</option>
-          </select>
-          <input type="submit"></input>
-        </form>
+        <section>
+          Logged in as {this.props.username}
+          <br></br>
+          Change user:<br></br>
+          <form onSubmit={this.handleSubmit}>
+            <select id="username" onChange={this.handleClick}>
+              <option value="weegembump">weegembump</option>
+              <option value="tickle122">tickle122</option>
+              <option value="grumpy19">grumpy19</option>
+              <option value="happyamy2016">happyamy2016</option>
+              <option value="jessjelly">jessjelly</option>
+              <option value="cooljmessy">cooljmessy</option>
+            </select>
+            <input type="submit"></input>
+          </form>
+        </section>
       </>
     );
   }

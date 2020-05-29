@@ -19,11 +19,13 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <header>NC News</header>
-        <NavBar />
+      <>
+        <header>
+          NC News
+          <NavBar />
+          <LogIn updateUser={this.updateUser} username={this.state.username} />
+        </header>
 
-        <LogIn updateUser={this.updateUser} username={this.state.username} />
         <Router>
           <ArticleList path="/" />
           <ArticleList path="/articles" />
@@ -35,7 +37,7 @@ class App extends Component {
           <User path="/user/:username" />
           <ErrorDisplay default />
         </Router>
-      </div>
+      </>
     );
   }
 }

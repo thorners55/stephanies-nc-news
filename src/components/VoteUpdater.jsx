@@ -28,14 +28,21 @@ class VoteUpdater extends Component {
 
     return (
       <>
-        <span>{updatedVotes} votes</span>
-        <br></br>
-        <button onClick={this.handleVote} name="upvote">
-          🙂{" "}
-        </button>
-        <button onClick={this.handleVote} name="downvote">
-          🙁
-        </button>
+        <section>
+          {updatedVotes} votes
+          <br></br>
+          <button onClick={this.handleVote} name="upvote">
+            <span role="img" aria-label="Happy face emoji">
+              🙂{" "}
+            </span>
+          </button>
+          <button onClick={this.handleVote} name="downvote">
+            {" "}
+            <span role="img" aria-label="Sad face emoji">
+              🙁
+            </span>
+          </button>
+        </section>
       </>
     );
   }

@@ -19,7 +19,6 @@ class PostComment extends Component {
   };
 
   componentDidMount() {
-    const { username } = this.props;
     this.setState({ username: "", body: "" });
   }
 
@@ -27,22 +26,24 @@ class PostComment extends Component {
     return (
       <>
         {" "}
-        <span>Post comment</span>
-        <form onSubmit={this.handleSubmit}>
-          <br></br>
-          <label>
-            <input
-              type="text"
-              value={this.state.body}
-              minLength={3}
-              name="body"
-              placeholder="Type comment here..."
-              onChange={this.handleChange}
-            ></input>
-          </label>
-          <br></br>
-          <button>Submit</button>
-        </form>
+        <section>
+          Post comment
+          <form onSubmit={this.handleSubmit}>
+            <br></br>
+            <label>
+              <input
+                type="text"
+                value={this.state.body}
+                minLength={3}
+                name="body"
+                placeholder="Type comment here..."
+                onChange={this.handleChange}
+              ></input>
+            </label>
+            <br></br>
+            <button>Submit</button>
+          </form>
+        </section>
       </>
     );
   }

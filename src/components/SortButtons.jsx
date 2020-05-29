@@ -17,9 +17,9 @@ class SortButtons extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { getArticlesByQuery } = this.props;
+    const { getArticles, topic, username } = this.props;
     const { sort, order } = this.state;
-    getArticlesByQuery(sort, order);
+    getArticles(topic, username, sort, order);
   };
 
   render() {

@@ -11,9 +11,9 @@ class ArticleList extends Component {
     err: "",
   };
 
-  getArticles = (topic, username) => {
+  getArticles = (topic, author, sort, order) => {
     api
-      .fetchArticles(topic, username)
+      .fetchArticles(topic, author, sort, order)
       .then((articles) => {
         this.setState({ articles, isLoading: false });
       })
@@ -27,15 +27,7 @@ class ArticleList extends Component {
       });
   };
 
-  getArticlesByQuery = (sort_by, order) => {
-    api.fetchArticlesByQuery(sort_by, order).then((articles) => {
-      console.dir(articles);
-      this.setState({ articles, isLoading: false });
-    });
-  };
-
   componentDidMount() {
-    console.log("Mounting");
     const { topic, username } = this.props;
     this.getArticles(topic, username);
   }
@@ -54,14 +46,22 @@ class ArticleList extends Component {
     return (
       <>
         <br></br>
-        <span>Sort by: </span>
-        <SortButtons getArticlesByQuery={this.getArticlesByQuery} />
+        <section>
+          Sort by:
+          <SortButtons
+            getArticles={this.getArticles}
+            topic={this.props.topic}
+            username={this.props.username}
+          />
+        </section>
         <ul>
           {this.state.articles.map((article) => {
             let { article_id } = article;
             return (
               <li key={article_id}>
-                <ArticlePreview article={article} />
+                <article>
+                  <ArticlePreview article={article} />
+                </article>
               </li>
             );
           })}

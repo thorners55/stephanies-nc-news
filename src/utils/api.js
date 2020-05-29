@@ -1,7 +1,6 @@
 import axios from "axios";
 
 export const fetchArticle = (articleId) => {
-  console.log("inside fetchArticle");
   return axios
     .get(`https://stephanies-news.herokuapp.com/api/articles/${articleId}`)
     .then(({ data }) => {
@@ -9,14 +8,15 @@ export const fetchArticle = (articleId) => {
     });
 };
 
-export const fetchArticles = (topic, author) => {
+export const fetchArticles = (topic, author, sort_by, order) => {
+  console.log(topic, author, sort_by, order);
   return axios
-    .get("https://stephanies-news.herokuapp.com/api/articles", {
+    .get(`https://stephanies-news.herokuapp.com/api/articles`, {
       params: {
         topic,
         author,
-        /*sort_by,
-        order,*/
+        sort_by,
+        order,
       },
     })
     .then(({ data: { articles } }) => {
@@ -24,8 +24,9 @@ export const fetchArticles = (topic, author) => {
       return articles;
     });
 };
+// https://stephanies-news.herokuapp.com/api/articles?sort_by=comment_count&order=desc
 
-export const fetchArticlesByQuery = (sort_by, order) => {
+/*export const fetchArticlesByQuery = (sort_by, order) => {
   console.log(sort_by);
   return axios
     .get(
@@ -34,7 +35,10 @@ export const fetchArticlesByQuery = (sort_by, order) => {
     .then(({ data: { articles } }) => {
       return articles;
     });
-};
+
+};*/
+
+//`https://stephanies-news.herokuapp.com/api/articles?author&sort_by=${sort_by}&order=${order}`
 
 export const fetchTopics = () => {
   return axios
@@ -80,7 +84,6 @@ export const deleteComment = (commentId) => {
 };
 
 export const patchVote = (id, path, vote) => {
-  console.log(vote);
   return axios
     .patch(`https://stephanies-news.herokuapp.com/api/${path}/${id}`, {
       inc_votes: vote,
