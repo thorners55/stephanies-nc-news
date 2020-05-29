@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList.jsx";
+import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 
 class User extends Component {
@@ -8,18 +9,30 @@ class User extends Component {
     avatar_url: "",
     name: "",
     isLoading: true,
+    err: "",
   };
 
   componentDidMount() {
     const { username } = this.props;
-    api.getUser(username).then(({ username, avatar_url, name }) => {
-      this.setState({ username, avatar_url, name, isLoading: false });
-      console.dir(this.state);
-    });
+    api
+      .getUser(username)
+      .then(({ username, avatar_url, name }) => {
+        this.setState({ username, avatar_url, name, isLoading: false });
+      })
+      .catch((err) => {
+        const {
+          response: {
+            data: { msg },
+          },
+        } = err;
+        this.setState({ err: msg, isLoading: false });
+      });
   }
 
   render() {
-    if (this.state.isLoading) return <span>User loading...</span>;
+    const { isLoading, err } = this.state;
+    if (isLoading) return <span>User loading...</span>;
+    if (err) return <ErrorDisplay msg={err} />;
     const { username } = this.props;
     const { avatar_url, name } = this.state;
     console.log(username);

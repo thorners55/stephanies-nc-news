@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import ArticlePreview from "./ArticlePreview";
 import SortButtons from "./SortButtons.jsx";
+import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 
 class ArticleList extends Component {
   state = {
     articles: [],
     isLoading: true,
+    err: "",
   };
 
   getArticles = (topic, username) => {
-    api.fetchArticles(topic, username).then((articles) => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchArticles(topic, username)
+      .then((articles) => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch((err) => {
+        const {
+          response: {
+            data: { msg },
+          },
+        } = err;
+        this.setState({ err: msg, isLoading: false });
+      });
   };
 
   getArticlesByQuery = (sort_by, order) => {
@@ -36,8 +48,9 @@ class ArticleList extends Component {
   }
 
   render() {
-    console.log("rendering article list");
-    if (this.state.isLoading) return <p>LOADING...</p>;
+    const { isLoading, err } = this.state;
+    if (isLoading) return <p>LOADING...</p>;
+    if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
         <br></br>

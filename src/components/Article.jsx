@@ -23,9 +23,8 @@ class Article extends Component {
         console.dir(err.response);
         const {
           data: { msg },
-          status,
         } = err.response;
-        this.setState({ err: status + " " + msg, isLoading: false });
+        this.setState({ err: msg, isLoading: false });
       });
     /* try {
       const { article_id } = this.props;
