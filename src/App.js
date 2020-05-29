@@ -20,8 +20,8 @@ class App extends Component {
 
   retrieveUsername = () => {
     const gotUsername = localStorage.getItem("username");
-    const user = JSON.parse(gotUsername);
-
+    let user = JSON.parse(gotUsername);
+    if (!user) user = "cooljmessy";
     this.setState({ username: user });
   };
 
