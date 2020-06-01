@@ -20,7 +20,7 @@ function CommentCard(props) {
         />
 
         <p>{body}</p>
-        <br></br>
+
         {props.username === author && (
           <button onClick={props.removeComment} name={comment_id}>
             Delete

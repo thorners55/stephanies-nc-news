@@ -46,7 +46,7 @@ class ArticleList extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <p>LOADING...</p>;
+    if (isLoading) return <p>Loading...</p>;
     if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
