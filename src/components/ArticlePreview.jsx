@@ -18,7 +18,7 @@ function ArticlePreview(props) {
   return (
     <>
       <header>
-        <Link to={`/articles/${article_id}`} className=" preview-subject">
+        <Link to={`/articles/${article_id}`} className="preview-subject">
           {title}
         </Link>
       </header>

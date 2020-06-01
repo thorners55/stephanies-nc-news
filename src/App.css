@@ -1,10 +1,23 @@
 body {
   font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
 }
 
 button {
   background-color: white;
   font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+select {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 1px;
 }
 
 a {
@@ -38,7 +51,7 @@ a:hover {
 }
 
 .preview-subject {
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 600;
   font-family: "Roboto Mono", monospace;
 }
