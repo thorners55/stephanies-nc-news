@@ -22,16 +22,20 @@ class NavBar extends Component {
   render() {
     return (
       <nav>
-        <ul>
+        <ul id="list">
           <li>
-            <Link to="/">News Homepage</Link>
+            <Link to="/" className="nav-link">
+              News Homepage
+            </Link>
           </li>
           <br></br>
           <header>Topics</header>
           {this.state.topics.map((slug) => {
             return (
               <li key={slug}>
-                <Link to={`/topics/${slug.toLowerCase()}`}>{slug}</Link>
+                <Link to={`/topics/${slug.toLowerCase()}`} className="nav-link">
+                  {slug}
+                </Link>
               </li>
             );
           })}

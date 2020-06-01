@@ -59,12 +59,12 @@ class ArticleList extends Component {
             username={this.props.username}
           />
         </section>
-        <ul>
+        <ul id="list">
           {this.state.articles.map((article) => {
             let { article_id } = article;
             return (
               <li key={article_id}>
-                <article>
+                <article className="article-card">
                   <ArticlePreview article={article} />
                 </article>
               </li>

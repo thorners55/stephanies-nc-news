@@ -29,7 +29,6 @@ class PostComment extends Component {
         <section>
           Post comment
           <form onSubmit={this.handleSubmit}>
-            <br></br>
             <label>
               <input
                 type="text"

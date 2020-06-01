@@ -37,15 +37,20 @@ class User extends Component {
     const { avatar_url, name } = this.state;
     return (
       <>
-        <h1>{username}</h1>
+        <div className="user">
+          <h1 className="subject">{username}</h1>
+          <span className="name">{name}</span>
+          <br></br>
+          <img
+            src={avatar_url}
+            alt={`${username}'s avatar`}
+            className="img"
+          ></img>
+        </div>
         <br></br>
-        {name}
+        <h2 className="preview-subject">Articles by {username}</h2>
         <br></br>
-        <img src={avatar_url} alt={`${username}'s avatar`}></img>
 
-        <br></br>
-        <h2>Articles by {username}</h2>
-        <br></br>
         <ArticleList username={username} />
       </>
     );

@@ -5,6 +5,7 @@ import VoteUpdater from "./VoteUpdater.jsx";
 import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 import * as utils from "../utils/utils.js";
+import moment from "moment";
 
 class Article extends Component {
   state = {
@@ -47,24 +48,24 @@ class Article extends Component {
         author,
         created_at,
       } = article;
-
+      const created = moment(created_at).format("MMMM Do YYYY, h:mm a");
       topic = utils.capitaliseFunc(topic);
       return (
         <>
           <article>
-            <h1>{title}</h1>
-            <br></br>
+            <h1 className="subject">{title}</h1>
             <VoteUpdater
               votes={votes}
               id={article_id}
               commentOrArticle={"articles"}
             />
-            <h3>
+
+            <h3 className="info">
               <Link to={`/user/${author}`}>{author}</Link> in {topic}
+              <br></br>
+              Created {created}
             </h3>
-            <br></br>
-            Created at {created_at}
-            <br></br>
+
             <p>{body}</p>
           </article>
           <Comments articleId={article_id} username={this.props.username} />

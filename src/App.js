@@ -32,13 +32,17 @@ class App extends Component {
   render() {
     return (
       <>
-        <header>
-          NC News
-          <NavBar />
-          <LogIn updateUser={this.updateUser} username={this.state.username} />
+        <header className="site-header">
+          <div className="site-title">NORTHCODERS NEWS</div>
         </header>
 
-        <Router>
+        <section className="sidebar">
+          <LogIn updateUser={this.updateUser} username={this.state.username} />
+          <br></br>
+          <NavBar />
+        </section>
+
+        <Router className="main">
           <ArticleList path="/" />
           <ArticleList path="/articles" />
           <ArticleList path="/topics/:topic" />

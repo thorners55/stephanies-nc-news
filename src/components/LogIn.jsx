@@ -22,7 +22,7 @@ class LogIn extends Component {
     return (
       <>
         <section>
-          Logged in as {this.props.username}
+          Logged in as <b>{this.props.username}</b>
           <br></br>
           Change user:<br></br>
           <form onSubmit={this.handleSubmit}>

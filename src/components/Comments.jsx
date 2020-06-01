@@ -44,7 +44,8 @@ class Comments extends Component {
     return (
       <>
         <section>
-          <div>{this.state.comments.length} Comments</div>
+          <div className="info">{this.state.comments.length} Comments</div>
+          <br></br>
           <PostComment addComment={this.addComment} username={username} />
           {this.state.comments.map((comment) => {
             return (

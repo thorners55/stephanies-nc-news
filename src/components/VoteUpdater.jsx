@@ -24,7 +24,7 @@ class VoteUpdater extends Component {
 
     return (
       <>
-        <section>
+        <section className="votes">
           {updatedVote} votes
           <br></br>
           <button

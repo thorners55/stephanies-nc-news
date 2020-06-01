@@ -1,13 +1,62 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  background-color: lightsteelblue;
+  display: grid;
+  grid-template-columns: 20vw 1fr;
+  grid-template-rows: 40px 1fr;
+  grid-template-areas:
+    "site-header site-header"
+    "sidebar main";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sidebar {
+  grid-area: sidebar;
+  background-color: lightgrey;
+  padding: 50px 10px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 15px;
+}
+
+.site-header {
+  grid-area: site-header;
+  padding: 15px;
+  font-size: 16px;
+  background-color: white;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 900;
+  text-align: center;
+}
+
+.main {
+  grid-area: main;
+  padding: 10px;
+}
+
+@media (max-width: 400px) {
+  #root {
+    background-color: lightsteelblue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 170px 1fr;
+    grid-template-areas:
+      " site-header"
+      "sidebar"
+      "main";
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    background-color: lightgrey;
+    padding: 10px;
+    font-family: "Roboto Mono", monospace;
+    font-size: 10px;
+  }
+
+  .main {
+    grid-area: main;
+    padding: 10px;
+  }
+
+  body {
+    font-size: 10px;
+  }
 }
