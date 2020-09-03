@@ -12,6 +12,7 @@ class SortButtons extends Component {
     this.setState((currentState) => {
       return { ...currentState, [name]: value };
     });
+    this.handleSubmit(event);
   };
 
   handleSubmit = (event) => {
@@ -34,7 +35,6 @@ class SortButtons extends Component {
             <option value="desc">Descending</option>
             <option value="asc">Ascending</option>
           </select>
-          <input type="submit"></input>
         </form>
       </>
     );

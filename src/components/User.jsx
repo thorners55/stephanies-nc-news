@@ -31,25 +31,21 @@ class User extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <span>User loading...</span>;
+    if (isLoading) return <p class="loading">Loading...</p>;
     if (err) return <ErrorDisplay msg={err} />;
     const { username } = this.props;
     const { avatar_url, name } = this.state;
     return (
       <>
         <div className="user">
-          <h1 className="subject">{username}</h1>
-          <span className="name">{name}</span>
-          <br></br>
-          <img
-            src={avatar_url}
-            alt={`${username}'s avatar`}
-            className="img"
-          ></img>
+          <img src={avatar_url} alt={`${username}'s avatar`} className="img" />
+          <div className="name">
+            <h1 className="subject">{username}</h1>
+            <span>{name}</span>
+          </div>
         </div>
-        <br></br>
-        <h2 className="preview-subject">Articles by {username}</h2>
-        <br></br>
+
+        <h2 className="articles-by">Articles by {username}</h2>
 
         <ArticleList username={username} />
       </>

@@ -46,13 +46,12 @@ class ArticleList extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <p>Loading...</p>;
+    if (isLoading) return <p class="loading">Loading...</p>;
     if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
         <br></br>
         <section>
-          Sort by:
           <SortButtons
             getArticles={this.getArticles}
             topic={this.props.topic}

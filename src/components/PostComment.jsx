@@ -27,10 +27,9 @@ class PostComment extends Component {
       <>
         {" "}
         <section>
-          Post comment
           <form onSubmit={this.handleSubmit}>
             <label>
-              <input
+              <textarea
                 type="text"
                 value={this.state.body}
                 minLength={3}
@@ -38,10 +37,10 @@ class PostComment extends Component {
                 placeholder="Type comment here..."
                 onChange={this.handleChange}
                 required
-              ></input>
+              ></textarea>
             </label>
             <br></br>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </section>
       </>

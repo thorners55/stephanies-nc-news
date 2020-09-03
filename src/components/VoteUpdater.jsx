@@ -32,8 +32,8 @@ class VoteUpdater extends Component {
             name="upvote"
             disabled={upvote}
           >
-            <span role="img" aria-label="Happy face emoji">
-              🙂{" "}
+            <span>
+              <i class="far fa-laugh"></i>
             </span>
           </button>
           <button
@@ -42,8 +42,8 @@ class VoteUpdater extends Component {
             disabled={downvote}
           >
             {" "}
-            <span role="img" aria-label="Sad face emoji">
-              🙁
+            <span>
+              <i class="far fa-frown"></i>
             </span>
           </button>
         </section>

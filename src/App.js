@@ -33,26 +33,37 @@ class App extends Component {
     return (
       <>
         <header className="site-header">
-          <div className="site-title">NORTHCODERS NEWS</div>
+          <div className="login">
+            <LogIn
+              updateUser={this.updateUser}
+              username={this.state.username}
+            />
+          </div>
+          <div className="northcoders-heading">
+            <span className="newspaper-icon">
+              <i className="far fa-newspaper"></i>
+            </span>
+            <div className="site-title">NORTHCODERS NEWS</div>
+          </div>
         </header>
 
-        <section className="sidebar">
-          <LogIn updateUser={this.updateUser} username={this.state.username} />
-          <br></br>
-          <NavBar />
-        </section>
+        <div className="body">
+          <section className="sidebar">
+            <NavBar />
+          </section>
 
-        <Router className="main">
-          <ArticleList path="/" />
-          <ArticleList path="/articles" />
-          <ArticleList path="/topics/:topic" />
-          <Article
-            path="/articles/:article_id"
-            username={this.state.username}
-          />
-          <User path="/user/:username" />
-          <ErrorDisplay default />
-        </Router>
+          <Router className="main">
+            <ArticleList path="/" />
+            <ArticleList path="/articles" />
+            <ArticleList path="/topics/:topic" />
+            <Article
+              path="/articles/:article_id"
+              username={this.state.username}
+            />
+            <User path="/user/:username" />
+            <ErrorDisplay default />
+          </Router>
+        </div>
       </>
     );
   }

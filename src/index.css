@@ -1,34 +1,46 @@
 #root {
-  background-color: lightsteelblue;
-  display: grid;
-  grid-template-columns: 20vw 1fr;
-  grid-template-rows: 40px 1fr;
-  grid-template-areas:
-    "site-header site-header"
-    "sidebar main";
+  background-color: #fd653f;
+  height: 100vh;
+}
+
+.login {
+  display: inline-block;
+  text-align: left;
+  font-size: 16px;
+  padding-left: 10px;
 }
 
 .sidebar {
   grid-area: sidebar;
-  background-color: lightgrey;
+  width: 10vw;
   padding: 50px 10px;
   font-family: "Roboto Mono", monospace;
   font-size: 15px;
 }
 
+.northcoders-heading {
+  display: inline-block;
+  text-align: center;
+  padding-left: 22vw;
+}
+
 .site-header {
-  grid-area: site-header;
   padding: 15px;
-  font-size: 16px;
-  background-color: white;
+  font-size: 30px;
+  background-color: #fefefa;
   font-family: "Roboto Mono", monospace;
   font-weight: 900;
-  text-align: center;
 }
 
 .main {
   grid-area: main;
-  padding: 10px;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 20vw 70vw;
+  grid-template-areas: "sidebar main";
+  background-color: #fd653f;
 }
 
 @media (max-width: 400px) {
