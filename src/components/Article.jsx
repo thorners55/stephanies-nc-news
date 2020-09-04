@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import Comments from "./Comments.jsx";
 import VoteUpdater from "./VoteUpdater.jsx";
+import Loading from "./Loading.jsx";
 import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 import * as utils from "../utils/utils.js";
@@ -36,7 +37,7 @@ class Article extends Component {
 
   render() {
     const { isLoading, err, article } = this.state;
-    if (isLoading) return <p className="loading">Loading...</p>;
+    if (isLoading) return <Loading />;
     if (err) return <ErrorDisplay msg={err} />;
     else {
       let {

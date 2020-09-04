@@ -8,35 +8,28 @@ class LogIn extends Component {
   handleClick = (event) => {
     event.preventDefault();
     const { value } = event.target;
-    this.setState({ username: value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
     const { updateUser } = this.props;
-    const { username } = this.state;
-    updateUser(username);
+    this.setState({ username: value });
+    updateUser(value);
   };
 
   render() {
     return (
       <>
-        <section>
-          Logged in as <b>{this.props.username}</b>
-          <br></br>
-          Change user:<br></br>
-          <form onSubmit={this.handleSubmit}>
-            <select id="username" onChange={this.handleClick}>
-              <option value="weegembump">weegembump</option>
-              <option value="tickle122">tickle122</option>
-              <option value="grumpy19">grumpy19</option>
-              <option value="happyamy2016">happyamy2016</option>
-              <option value="jessjelly">jessjelly</option>
-              <option value="cooljmessy">cooljmessy</option>
-            </select>
-            <input type="submit"></input>
-          </form>
-        </section>
+        <span class="fas fa-user" role="img" aria-label="User icon"></span>
+        <b> {this.props.username}</b>
+        <br></br>
+        Change user:<br></br>
+        <form onSubmit={this.handleSubmit}>
+          <select id="username" onChange={this.handleClick}>
+            <option value="weegembump">weegembump</option>
+            <option value="tickle122">tickle122</option>
+            <option value="grumpy19">grumpy19</option>
+            <option value="happyamy2016">happyamy2016</option>
+            <option value="jessjelly">jessjelly</option>
+            <option value="cooljmessy">cooljmessy</option>
+          </select>
+        </form>
       </>
     );
   }

@@ -24,7 +24,7 @@ class SortButtons extends Component {
 
   render() {
     return (
-      <>
+      <div id="sort-dropdowns">
         <form onSubmit={this.handleSubmit}>
           <select id="sort" name="sort" onChange={this.handleClick}>
             <option value="created_at">Date</option>
@@ -36,7 +36,7 @@ class SortButtons extends Component {
             <option value="asc">Ascending</option>
           </select>
         </form>
-      </>
+      </div>
     );
   }
 }

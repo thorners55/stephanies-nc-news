@@ -15,10 +15,6 @@ button {
   letter-spacing: 1px;
 }
 
-form {
-  padding-left: 10px;
-}
-
 input[type="submit"] {
   background-color: #fefefa;
   margin-left: 5px;
@@ -40,6 +36,7 @@ select {
   margin-right: 10px;
   width: 20ch;
   margin-top: 5px;
+  background-color: #fefefa;
 }
 
 textarea {
@@ -67,7 +64,7 @@ button:hover[type="submit"] {
 
 a {
   color: black;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 a:hover {
@@ -83,15 +80,10 @@ a:hover {
 }
 
 .home-link,
-.home-link:visited,
-.home-link:hover {
+.home-link:visited {
   font-size: 50px;
   color: red;
   text-decoration: none;
-}
-
-.home-link:visited {
-  color: red;
 }
 
 .nav-link:visited {
@@ -108,17 +100,21 @@ li {
   margin-left: -30px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .preview-subject {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
   clear: left;
 }
 
 .preview-info {
   font-size: 16px;
   font-weight: 400;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 .article-card {
@@ -129,19 +125,19 @@ li {
 .subject {
   font-size: 30px;
   font-weight: 600;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 .info {
   font-size: 15px;
   font-weight: 700;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 .votes {
   font-size: 16px;
   font-weight: bold;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto ", sans-serif;
 }
 
 .votes > button {
@@ -211,14 +207,8 @@ li {
 }
 
 .loading {
-  font-size: 26px;
-}
-
-footer {
-  height: 20vh;
-  background-color: red;
-
-  width: 100%;
+  display: block;
+  margin: auto;
 }
 
 @media (max-width: 900px) {
@@ -242,7 +232,7 @@ footer {
 
   nav {
     align-items: center;
-    margin-left: -25vw;
+    margin-left: -20vw;
     flex-grow: 1;
   }
 

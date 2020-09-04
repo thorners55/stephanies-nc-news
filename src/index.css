@@ -6,7 +6,7 @@
 }
 
 .login {
-  display: inline-block;
+  float: left;
   grid-area: login;
   text-align: left;
   font-size: 16px;
@@ -17,27 +17,30 @@
   grid-area: sidebar;
   width: 10vw;
   padding: 50px 10px;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", sans-serif;
 }
 
 .northcoders-heading {
   display: inline-block;
   grid-area: northcoders-heading;
   text-align: center;
-  padding-left: 22vw;
 }
 
 .site-header {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-areas: "login northcoders-heading";
+  text-align: center;
   padding: 15px;
   font-size: 30px;
   background-color: #fefefa;
-  font-family: "Roboto Mono", monospace;
-  font-weight: 900;
+  font-family: "Roboto", sans-serif;
 }
 
 .site-title {
   color: black;
-  font-size: 22px;
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .body {
@@ -61,6 +64,7 @@
   .site-header {
     display: grid;
     grid-template-rows: 20vh 10vh;
+    grid-template-columns: 100%;
     grid-template-areas: "northcoders-heading" "login";
   }
 
@@ -72,7 +76,7 @@
   }
 
   .login {
-    display: block;
+    float: left;
     grid-area: login;
     font-size: 12px;
     padding-left: 10px;

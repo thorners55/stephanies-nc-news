@@ -25,6 +25,17 @@ class NavBar extends Component {
         <ul id="link-list">
           <br></br>
           {/*<header>Topics</header>*/}
+          <li>
+            {" "}
+            <Link to="/" className="nav-link">
+              <span
+                class="fas fa-home"
+                role="img"
+                aria-label="News Home"
+              ></span>
+            </Link>
+          </li>
+
           {this.state.topics.map((slug) => {
             return (
               <li key={slug}>
