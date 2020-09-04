@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ArticleList from "./ArticleList.jsx";
+import Loading from "./Loading.jsx";
 import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 
@@ -31,7 +32,7 @@ class User extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <p className="loading">Loading...</p>;
+    if (isLoading) return <Loading />;
     if (err) return <ErrorDisplay msg={err} />;
     const { username } = this.props;
     const { avatar_url, name } = this.state;

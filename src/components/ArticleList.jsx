@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ArticlePreview from "./ArticlePreview";
 import SortButtons from "./SortButtons.jsx";
+import Loading from "./Loading.jsx";
 import ErrorDisplay from "./ErrorDisplay.jsx";
 import * as api from "../utils/api.js";
 
@@ -46,7 +47,7 @@ class ArticleList extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <p className="loading">Loading...</p>;
+    if (isLoading) return <Loading />;
     if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
