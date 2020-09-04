@@ -8,7 +8,7 @@ function CommentCard(props) {
   const created = moment(created_at).format("MMMM Do YYYY, h:mm a");
   return (
     <ul>
-      <li id="list" class="comment-card">
+      <li id="comment-list" className="comment-card">
         <span className="info">
           <Link to={`/user/${author}`}>{author}</Link> at {created}
         </span>
@@ -25,7 +25,7 @@ function CommentCard(props) {
           <button
             onClick={props.removeComment}
             name={comment_id}
-            class="delete"
+            className="delete"
           >
             Delete
           </button>

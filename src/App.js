@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
 import ArticleList from "./components/ArticleList";
 import Article from "./components/Article";
 import User from "./components/User";
@@ -40,17 +40,19 @@ class App extends Component {
             />
           </div>
           <div className="northcoders-heading">
-            <span className="newspaper-icon">
-              <i className="far fa-newspaper"></i>
-            </span>
-            <div className="site-title">NORTHCODERS NEWS</div>
+            <Link to="/" className="home-link">
+              <span className="newspaper-icon">
+                <i className="far fa-newspaper"></i>
+              </span>
+              <div className="site-title">NORTHCODERS NEWS</div>
+            </Link>
           </div>
         </header>
 
         <div className="body">
-          <section className="sidebar">
+          <div className="sidebar">
             <NavBar />
-          </section>
+          </div>
 
           <Router className="main">
             <ArticleList path="/" />

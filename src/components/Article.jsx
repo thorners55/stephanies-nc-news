@@ -36,7 +36,7 @@ class Article extends Component {
 
   render() {
     const { isLoading, err, article } = this.state;
-    if (isLoading) return <p class="loading">Loading...</p>;
+    if (isLoading) return <p className="loading">Loading...</p>;
     if (err) return <ErrorDisplay msg={err} />;
     else {
       let {

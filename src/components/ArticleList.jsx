@@ -46,7 +46,7 @@ class ArticleList extends Component {
 
   render() {
     const { isLoading, err } = this.state;
-    if (isLoading) return <p class="loading">Loading...</p>;
+    if (isLoading) return <p className="loading">Loading...</p>;
     if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
@@ -58,7 +58,7 @@ class ArticleList extends Component {
             username={this.props.username}
           />
         </section>
-        <ul id="list">
+        <ul id="article-list">
           {this.state.articles.map((article) => {
             let { article_id } = article;
             return (

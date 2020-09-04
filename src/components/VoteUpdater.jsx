@@ -33,7 +33,7 @@ class VoteUpdater extends Component {
             disabled={upvote}
           >
             <span>
-              <i class="far fa-laugh"></i>
+              <i className="far fa-laugh"></i>
             </span>
           </button>
           <button
@@ -43,7 +43,7 @@ class VoteUpdater extends Component {
           >
             {" "}
             <span>
-              <i class="far fa-frown"></i>
+              <i className="far fa-frown"></i>
             </span>
           </button>
         </section>

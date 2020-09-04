@@ -2,20 +2,21 @@ body {
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
   font-size: 16px;
-  margin-left: -10px;
-  margin-right: -10px;
   overflow-x: hidden;
 }
 
 .newspaper-icon {
   font-size: 60px;
-  color: red;
 }
 
 button {
   background-color: #fefefa;
   font-family: "Roboto", sans-serif;
   letter-spacing: 1px;
+}
+
+form {
+  padding-left: 10px;
 }
 
 input[type="submit"] {
@@ -69,10 +70,6 @@ a {
   font-weight: 700;
 }
 
-nav {
-  margin-left: 20px;
-}
-
 a:hover {
   background-color: #fefefa;
 }
@@ -85,28 +82,30 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.home-link {
+.home-link,
+.home-link:visited,
+.home-link:hover {
   font-size: 50px;
-  color: #fefefa;
+  color: red;
+  text-decoration: none;
 }
 
 .home-link:visited {
-  color: #fefefa;
+  color: red;
 }
 
 .nav-link:visited {
   color: black;
 }
 
-.home-link:hover,
 .nav-link:hover {
   color: #000000;
   background-color: #fefefa;
 }
 
-#list {
+li {
   list-style-type: none;
-  padding-left: 0;
+  margin-left: -30px;
 }
 
 .preview-subject {
@@ -161,11 +160,13 @@ a:hover {
   font-size: 18px;
   font-weight: bold;
   padding-top: 40px;
+  padding-left: 10px;
 }
 
 .comment-card {
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-right: 10px;
   border-bottom: 2px solid black;
 }
 
@@ -192,7 +193,7 @@ a:hover {
 .img {
   float: left;
   height: 150px;
-  margin-bottom: 50px;
+
   margin-right: 30px;
   margin-top: 40px;
   position: relative;
@@ -201,8 +202,51 @@ a:hover {
 .articles-by {
   float: none;
   clear: both;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+
+.user {
+  padding-left: 10px;
 }
 
 .loading {
   font-size: 26px;
+}
+
+footer {
+  height: 20vh;
+  background-color: red;
+
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .nav-link {
+    font-size: 14px;
+    display: inline;
+  }
+
+  #link-list {
+    display: flex;
+    padding-left: 0px;
+    justify-content: space-around;
+    padding-top: 10px;
+    margin: 0px;
+  }
+
+  #link-list > li {
+    display: inline;
+    margin-left: 0px;
+  }
+
+  nav {
+    align-items: center;
+    margin-left: -25vw;
+    flex-grow: 1;
+  }
+
+  .name {
+    margin-top: 0px;
+  }
 }
