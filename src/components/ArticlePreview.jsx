@@ -18,17 +18,19 @@ function ArticlePreview(props) {
   return (
     <>
       <header>
-        <Link to={`/articles/${article_id}`} className="preview-subject">
-          {title}
-        </Link>
-      </header>
+        <h2>
+          <Link to={`/articles/${article_id}`} className="preview-subject">
+            {title}
+          </Link>
+        </h2>
 
-      <h1 className="preview-info">
-        by <Link to={`/user/${author}`}>{author}</Link> in {topic} topic,
-        created {created}
-        <br></br>
-        {comment_count} comments, {votes} votes
-      </h1>
+        <h3 className="preview-info">
+          by <Link to={`/user/${author}`}>{author}</Link> in {topic} topic,
+          created {created}
+          <br></br>
+          {comment_count} comments, {votes} votes
+        </h3>
+      </header>
       <p>
         {utils.formatArticles(body)}...
         <Link to={`/articles/${article_id}`}>See full article</Link>

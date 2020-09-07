@@ -54,19 +54,20 @@ class Article extends Component {
       return (
         <>
           <article>
-            <h1 className="subject">{title}</h1>
-            <VoteUpdater
-              votes={votes}
-              id={article_id}
-              commentOrArticle={"articles"}
-            />
+            <header>
+              <h2 className="subject">{title}</h2>
+              <VoteUpdater
+                votes={votes}
+                id={article_id}
+                commentOrArticle={"articles"}
+              />
 
-            <h3 className="info">
-              <Link to={`/user/${author}`}>{author}</Link> in {topic}
-              <br></br>
-              Created {created}
-            </h3>
-
+              <h3 className="info">
+                <Link to={`/user/${author}`}>{author}</Link> in {topic}
+                <br></br>
+                Created {created}
+              </h3>
+            </header>
             <p>{body}</p>
           </article>
           <Comments articleId={article_id} username={this.props.username} />

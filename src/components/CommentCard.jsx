@@ -9,9 +9,9 @@ function CommentCard(props) {
   return (
     <ul>
       <li id="comment-list" className="comment-card">
-        <span className="info">
+        <h3 className="info">
           <Link to={`/user/${author}`}>{author}</Link> at {created}
-        </span>
+        </h3>
         <br></br>
         <VoteUpdater
           votes={votes}

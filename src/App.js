@@ -48,7 +48,7 @@ class App extends Component {
                   aria-label="Newspaper icon"
                 ></span>
               </span>
-              <div className="site-title">NORTHCODERS NEWS</div>
+              <h1 className="site-title">NORTHCODERS NEWS</h1>
             </Link>
           </div>
         </header>

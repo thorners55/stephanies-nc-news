@@ -26,23 +26,20 @@ class PostComment extends Component {
     return (
       <>
         {" "}
-        <section>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <textarea
-                type="text"
-                value={this.state.body}
-                minLength={3}
-                name="body"
-                placeholder="Type comment here..."
-                onChange={this.handleChange}
-                required
-              ></textarea>
-            </label>
-            <br></br>
-            <button type="submit">Submit</button>
-          </form>
-        </section>
+        <form onSubmit={this.handleSubmit}>
+          <label for="comment">New comment</label>
+          <textarea
+            value={this.state.body}
+            minLength={3}
+            name="body"
+            placeholder="Type comment here..."
+            onChange={this.handleChange}
+            required
+          ></textarea>
+
+          <br></br>
+          <button type="submit">Submit</button>
+        </form>
       </>
     );
   }

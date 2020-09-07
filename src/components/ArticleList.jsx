@@ -51,14 +51,12 @@ class ArticleList extends Component {
     if (err) return <ErrorDisplay msg={this.state.err} />;
     return (
       <>
-        <br></br>
-        <section>
-          <SortButtons
-            getArticles={this.getArticles}
-            topic={this.props.topic}
-            username={this.props.username}
-          />
-        </section>
+        <SortButtons
+          getArticles={this.getArticles}
+          topic={this.props.topic}
+          username={this.props.username}
+        />
+
         <ul id="article-list">
           {this.state.articles.map((article) => {
             let { article_id } = article;

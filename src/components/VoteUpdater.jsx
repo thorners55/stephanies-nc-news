@@ -24,8 +24,8 @@ class VoteUpdater extends Component {
 
     return (
       <>
-        <section className="votes">
-          {updatedVote} votes
+        <div className="votes">
+          <h4>{updatedVote} votes</h4>
           <br></br>
           <button
             onClick={() => this.handleVote(1, "upvote")}
@@ -46,7 +46,7 @@ class VoteUpdater extends Component {
               <i className="far fa-frown"></i>
             </span>
           </button>
-        </section>
+        </div>
       </>
     );
   }
