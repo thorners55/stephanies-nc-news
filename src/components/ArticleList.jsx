@@ -62,7 +62,7 @@ class ArticleList extends Component {
             let { article_id } = article;
             return (
               <li key={article_id}>
-                <article className="article-card">
+                <article id="article-card">
                   <ArticlePreview article={article} />
                 </article>
               </li>

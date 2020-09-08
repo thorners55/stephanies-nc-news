@@ -36,7 +36,6 @@ class PostComment extends Component {
             required
           ></textarea>
 
-          <br></br>
           <button type="submit">Submit</button>
         </form>
       </>

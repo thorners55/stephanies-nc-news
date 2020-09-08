@@ -33,14 +33,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <header className="site-header">
-          <div className="login">
+        <header id="site-header">
+          <div id="login">
             <LogIn
               updateUser={this.updateUser}
               username={this.state.username}
             />
           </div>
-          <div className="northcoders-heading">
+          <div id="northcoders-heading">
             <Link to="/" className="home-link">
               <span className="newspaper-icon">
                 <span
@@ -49,27 +49,29 @@ class App extends Component {
                   aria-label="Newspaper icon"
                 ></span>
               </span>
-              <h1 className="site-title">NORTHCODERS NEWS</h1>
+              <h1 id="site-title">NORTHCODERS NEWS</h1>
             </Link>
           </div>
         </header>
 
-        <div className="body">
-          <div className="sidebar">
+        <div id="main-area">
+          <div id="sidebar">
             <NavBar />
           </div>
 
-          <Router className="main">
-            <ArticleList path="/" />
-            <ArticleList path="/articles" />
-            <ArticleList path="/topics/:topic" />
-            <Article
-              path="/articles/:article_id"
-              username={this.state.username}
-            />
-            <User path="/user/:username" />
-            <ErrorDisplay default />
-          </Router>
+          <main>
+            <Router>
+              <ArticleList path="/" />
+              <ArticleList path="/articles" />
+              <ArticleList path="/topics/:topic" />
+              <Article
+                path="/articles/:article_id"
+                username={this.state.username}
+              />
+              <User path="/user/:username" />
+              <ErrorDisplay default />
+            </Router>
+          </main>
         </div>
         <Footer />
       </>

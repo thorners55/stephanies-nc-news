@@ -62,11 +62,11 @@ class Article extends Component {
                 commentOrArticle={"articles"}
               />
 
-              <h3 className="info">
+              <p className="info">
                 <Link to={`/user/${author}`}>{author}</Link> in {topic}
-                <br></br>
-                Created {created}
-              </h3>
+                <br />
+                Created on {created}
+              </p>
             </header>
             <p>{body}</p>
           </article>
