@@ -104,11 +104,10 @@ a {
   text-decoration: none;
 }
 
-.preview-subject {
+h2 {
   font-size: 18px;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
-  clear: left;
 }
 
 .preview-info {
@@ -134,29 +133,39 @@ a {
   font-family: "Roboto", sans-serif;
 }
 
-.votes {
+#votes {
   font-size: 16px;
   font-weight: bold;
   font-family: "Roboto ", sans-serif;
 }
 
-.votes > button {
+#votes > button {
   font-size: 25px;
   margin: 10px;
   margin-left: 0px;
   background-color: yellow;
 }
 
-.votes > button:hover {
+#votes > button:hover {
   background-color: #fefefa;
   cursor: pointer;
 }
 
-.comments {
-  font-size: 18px;
+h4 {
+  margin: 0px;
+}
+
+textarea {
+  margin-top: 20px;
+}
+
+.smaller-heading {
+  float: none;
+  clear: both;
+  font-size: 22px;
   font-weight: bold;
-  padding-top: 40px;
-  padding-left: 10px;
+  padding-top: 60px;
+  margin-left: 10px;
 }
 
 .comment-card {
@@ -173,6 +182,11 @@ a {
   padding: 10px;
   border: 2px solid black;
   cursor: pointer;
+}
+
+#sort-dropdowns {
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 .delete:hover {
@@ -195,7 +209,7 @@ a {
   position: relative;
 }
 
-.articles-by {
+#articles-by {
   float: none;
   clear: both;
   padding-left: 10px;
@@ -219,7 +233,6 @@ a {
 
   #link-list {
     display: flex;
-    padding-left: 0px;
     justify-content: space-around;
     padding-top: 10px;
     margin: 0px;
@@ -238,5 +251,11 @@ a {
 
   .name {
     margin-top: 0px;
+  }
+
+  textarea {
+    width: 60vw;
+    border: 2px solid black;
+    margin-bottom: 10px;
   }
 }

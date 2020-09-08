@@ -46,7 +46,7 @@ class User extends Component {
           </div>
         </header>
 
-        <h3 className="articles-by">Articles by {username}</h3>
+        <h3 class="smaller-heading">Articles by {username}</h3>
 
         <ArticleList username={username} />
       </>

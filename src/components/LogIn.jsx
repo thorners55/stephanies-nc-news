@@ -18,7 +18,6 @@ class LogIn extends Component {
       <>
         <span class="fas fa-user" role="img" aria-label="Logged in as"></span>
         <b> {this.props.username}</b>
-        <br></br>
         <form onSubmit={this.handleSubmit}>
           <label for="change-user">Change user:</label>
           <select name="usernames" id="change-user" onChange={this.handleClick}>

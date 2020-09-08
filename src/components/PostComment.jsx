@@ -27,7 +27,6 @@ class PostComment extends Component {
       <>
         {" "}
         <form onSubmit={this.handleSubmit}>
-          <label for="comment">New comment</label>
           <textarea
             value={this.state.body}
             minLength={3}

@@ -44,9 +44,8 @@ class Comments extends Component {
     return (
       <>
         <section>
-          <br></br>
           <PostComment addComment={this.addComment} username={username} />
-          <h2 className="comments">{this.state.comments.length} Comments</h2>
+          <h3 class="smaller-heading">{this.state.comments.length} Comments</h3>
           {this.state.comments.map((comment) => {
             return (
               <CommentCard

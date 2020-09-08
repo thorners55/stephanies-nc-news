@@ -25,16 +25,15 @@ function ArticlePreview(props) {
         </h2>
 
         <h3 className="preview-info">
-          by <Link to={`/user/${author}`}>{author}</Link> in {topic} topic,
-          created {created}
-          <br></br>
+          by <Link to={`/user/${author}`}>{author}</Link> in {topic}, created{" "}
+          {created}
+          <br />
           {comment_count} comments, {votes} votes
         </h3>
       </header>
       <p>
         {utils.formatArticles(body)}...
         <Link to={`/articles/${article_id}`}>See full article</Link>
-        <br></br>
       </p>
     </>
   );

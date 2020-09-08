@@ -24,9 +24,9 @@ class VoteUpdater extends Component {
 
     return (
       <>
-        <div className="votes">
+        <div id="votes">
           <h4>{updatedVote} votes</h4>
-          <br></br>
+
           <button
             onClick={() => this.handleVote(1, "upvote")}
             name="upvote"
