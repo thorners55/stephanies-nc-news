@@ -10,7 +10,6 @@
   grid-area: login;
   text-align: left;
   font-size: 16px;
-  padding-left: 10px;
 }
 
 .sidebar {
@@ -48,10 +47,25 @@
   grid-template-columns: 20vw 70vw;
   grid-template-areas: "sidebar";
   background-color: #fd653f;
+  padding-bottom: 150px;
 }
 
-.main {
-  padding-left: 10px;
+footer {
+  background-color: #fefefa;
+  padding: 30px;
+  height: 20vh;
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 0px;
+}
+
+footer > a {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+footer > a:hover {
+  background-color: yellow;
 }
 
 @media (max-width: 900px) {
@@ -85,8 +99,9 @@
     display: flex;
     padding: 0px;
     width: 100%;
-    background: rgb(161, 160, 160);
+    background: #fefefa;
     padding-left: 5px;
+    margin-top: -2px;
   }
 }
 

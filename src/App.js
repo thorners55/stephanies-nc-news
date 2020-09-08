@@ -7,6 +7,7 @@ import User from "./components/User";
 import NavBar from "./components/NavBar";
 import LogIn from "./components/LogIn";
 import ErrorDisplay from "./components/ErrorDisplay.jsx";
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -70,6 +71,7 @@ class App extends Component {
             <ErrorDisplay default />
           </Router>
         </div>
+        <Footer />
       </>
     );
   }

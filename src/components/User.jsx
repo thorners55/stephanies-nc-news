@@ -38,8 +38,8 @@ class User extends Component {
     const { avatar_url, name } = this.state;
     return (
       <>
-        <header className="user">
-          <img src={avatar_url} alt={`${username}'s avatar`} className="img" />
+        <header className="padding">
+          <img src={avatar_url} alt={`${username}'s avatar`} id="avatar" />
           <div className="name">
             <h2 className="subject">{username}</h2>
             <span>{name}</span>
