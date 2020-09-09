@@ -58,8 +58,8 @@ class Article extends Component {
         <>
           <article>
             <header>
-              <h2 className="subject">{title}</h2>
-              <p className="info">
+              <h2>{title}</h2>
+              <p id="info">
                 by{" "}
                 <Link to={`/user/${author}`} aria-label={username}>
                   {author}

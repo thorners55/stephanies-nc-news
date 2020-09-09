@@ -8,8 +8,8 @@ function CommentCard(props) {
   const created = moment(created_at).format("MMMM Do YYYY, h:mm a");
   return (
     <ul>
-      <li id={`${comment_id}+${author}`} className="comment-card">
-        <h4 className="info">
+      <li id="comment-card">
+        <h4>
           <Link to={`/user/${author}`}>{author}</Link> on {created}
         </h4>
         <VoteUpdater

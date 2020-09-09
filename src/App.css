@@ -4,10 +4,14 @@
   margin: -10px;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 1.5px;
-  font-size: 16px;
+  letter-spacing: 0.09rem;
+  font-size: 1rem;
   overflow-x: hidden;
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -25,26 +29,36 @@ a:hover {
 
 select {
   font-family: "Roboto", sans-serif;
-  letter-spacing: 1px;
-  font-size: 16px;
-  padding: 4px;
-  margin: 5px 10px 0px 0px;
-  width: 20ch;
+  letter-spacing: 0.09rem;
+  font-size: 1.6rem;
+  padding: 0.02rem;
+  margin: 0.3rem 0.625rem 0px 0px;
   background-color: #fefefa;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 3rem;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
+  margin-bottom: 0;
 }
 
 h3 {
   float: none;
   clear: both;
-  font-size: 22px;
+  font-size: 2.3rem;
   font-weight: bold;
-  padding-top: 60px;
+  padding-top: 3.75rem;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin: 0.5rem 0px;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 /* Site heading - login and logo */
@@ -54,8 +68,8 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "login northcoders-heading";
   text-align: center;
-  padding: 15px;
-  font-size: 30px;
+  padding: 1.5rem;
+  font-size: 2rem;
   background-color: #fefefa;
   font-family: "Roboto", sans-serif;
 }
@@ -64,7 +78,7 @@ h3 {
   float: left;
   grid-area: login;
   text-align: left;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 #change-user {
@@ -79,17 +93,17 @@ h3 {
 
 .home-link,
 .home-link:visited {
-  font-size: 50px;
+  font-size: 3.5rem;
   color: red;
 }
 
 .newspaper-icon {
-  font-size: 60px;
+  font-size: 5rem;
 }
 
 #site-title {
   color: black;
-  font-size: 30px;
+  font-size: 3rem;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -98,9 +112,9 @@ h3 {
 #main-area {
   display: grid;
   grid-template-columns: 20vw 70vw;
-
   grid-template-areas: "sidebar";
   background-color: #fd653f;
+  padding-bottom: 15ch;
 }
 
 #loading {
@@ -112,15 +126,19 @@ h3 {
 
 footer {
   background-color: #fefefa;
-  padding: 30px 30px 0px 30px;
+  padding: 3vh 0;
   height: 20vh;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.3rem;
+}
+
+footer > p {
+  font-size: 1.3rem;
 }
 
 footer > a {
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 footer > a:hover {
@@ -132,7 +150,7 @@ footer > a:hover {
 #sidebar {
   grid-area: sidebar;
   width: 10vw;
-  padding-left: 10px;
+  padding-left: 1.5rem;
   font-family: "Roboto", sans-serif;
 }
 
@@ -143,10 +161,10 @@ li {
 
 .nav-link {
   color: black;
-  font-size: 24px;
+  font-size: 2.5rem;
   font-weight: 700;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
 }
 
 .nav-link:visited {
@@ -161,42 +179,52 @@ li {
 /* Main area - Article list */
 
 #sort-dropdowns {
-  padding-top: 10px;
+  padding-top: 0.65rem;
 }
 
 #article-card {
-  padding: 30px 0px;
+  padding: 2rem 0px;
 }
 
 #article-card > header > h2 {
-  font-size: 20px;
+  font-size: 2.5rem;
+  margin: 0;
 }
 
 #article-card > header > p {
-  font-size: 18px;
+  font-size: 2rem;
+  margin-top: 1ch;
+}
+
+#article-card > p {
+  font-size: 1.6rem;
   font-weight: 400;
   font-family: "Roboto", sans-serif;
 }
 
 /* Main area - Article page */
 
+#info {
+  font-size: 1.8rem;
+}
+
 textarea {
   display: block;
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 1.6rem;
+  letter-spacing: 0.09rem;
   width: 30vw;
   height: 15vw;
-  border: 2px solid black;
-  margin: 20px 0px 10px 0px;
+  border: 0.2rem solid black;
+  margin: 1.25rem 0px 0.625rem 0px;
 }
 
 button[type="submit"] {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   background-color: yellow;
-  padding: 16px;
-  border: 2px solid black;
+  padding: 1.6rem;
+  border: 0.2rem solid black;
   cursor: pointer;
 }
 
@@ -205,14 +233,14 @@ button:hover[type="submit"] {
 }
 
 .votes {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: bold;
   font-family: "Roboto ", sans-serif;
 }
 
 .votes > button {
-  font-size: 25px;
-  margin: 10px 10px 10px 0px;
+  font-size: 2.5rem;
+  margin: 0.625rem 0.625rem 0.625rem 0px;
   background-color: yellow;
 }
 
@@ -222,17 +250,17 @@ button:hover[type="submit"] {
 }
 
 .comment-card {
-  padding: 40px 0px;
-  margin-right: 15px;
-  border-bottom: 2px solid black;
+  padding: 2.5rem 0px;
+  margin-right: 1rem;
+  border-bottom: 0.2rem solid black;
 }
 
 li.comment-card > button {
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: bold;
   background-color: yellow;
   padding: 10px;
-  border: 2px solid black;
+  border: 0.2rem solid black;
   cursor: pointer;
 }
 
@@ -244,19 +272,19 @@ li.comment-card > button:hover {
 
 #avatar {
   float: left;
-  height: 150px;
+  height: 15rem;
   position: relative;
-  margin: 40px 30px 0px -10px;
+  margin: 3rem 2.5rem 0px -0.6rem;
 }
 
 #user-details {
-  padding-left: 10px;
+  padding-left: 0.5rem;
 }
 
 #user-details > div {
   float: left;
   font-size: 24px;
-  margin: 40px 20px 0px 0px;
+  margin: 2.5rem 1.25rem 0px 0px;
 }
 
 @media (max-width: 900px) {
@@ -272,14 +300,14 @@ li.comment-card > button:hover {
   #northcoders-heading {
     display: block;
     grid-area: northcoders-heading;
-    font-size: 18px;
+    font-size: 1rem;
     padding-left: 0px;
   }
 
   #login {
     float: left;
     grid-area: login;
-    font-size: 12px;
+    font-size: 1.5rem;
   }
 
   /* Main area */
@@ -298,12 +326,12 @@ li.comment-card > button:hover {
     display: flex;
     width: 100%;
     background: #fefefa;
-    margin-top: -2px;
     padding-left: 0px;
+    margin-top: -2px;
   }
 
   .nav-link {
-    font-size: 14px;
+    font-size: 1.5rem;
     display: inline;
   }
 
@@ -332,7 +360,6 @@ li.comment-card > button:hover {
 
   textarea {
     width: 60vw;
-    border: 2px solid black;
     margin-bottom: 10px;
   }
 
