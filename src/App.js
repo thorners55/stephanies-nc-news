@@ -42,14 +42,16 @@ class App extends Component {
           </div>
           <div id="northcoders-heading">
             <Link to="/" className="home-link">
-              <span className="newspaper-icon">
-                <span
-                  className="far fa-newspaper"
-                  role="img"
-                  aria-label="Newspaper icon"
-                ></span>
+              <span
+                className="newspaper-icon"
+                role="img"
+                aria-label="Newspaper icon"
+              >
+                <span className="far fa-newspaper newspaper-icon"></span>
               </span>
-              <h1 id="site-title">NORTHCODERS NEWS</h1>
+              <h1 id="site-title" aria-label="north coders news">
+                NORTHCODERS NEWS
+              </h1>
             </Link>
           </div>
         </header>

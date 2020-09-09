@@ -26,12 +26,22 @@ class SortButtons extends Component {
     return (
       <div id="sort-dropdowns">
         <form onSubmit={this.handleSubmit}>
-          <select id="sort" name="sort" onChange={this.handleClick}>
+          <select
+            id="sort"
+            name="sort"
+            aria-label="sort by"
+            onChange={this.handleClick}
+          >
             <option value="created_at">Date</option>
             <option value="comment_count">Comment count</option>
             <option value="votes">Votes</option>
           </select>
-          <select id="order" name="order" onChange={this.handleClick}>
+          <select
+            id="order"
+            name="order"
+            aria-label="order by"
+            onChange={this.handleClick}
+          >
             <option value="desc">Descending</option>
             <option value="asc">Ascending</option>
           </select>

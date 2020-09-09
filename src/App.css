@@ -1,12 +1,7 @@
 /* Global styles */
 
 #root {
-  background-color: #fd653f;
-  margin: -10px -10px;
-}
-
-html {
-  margin-right: -5px;
+  margin: -10px;
 }
 
 body {
@@ -14,6 +9,8 @@ body {
   letter-spacing: 1.5px;
   font-size: 16px;
   overflow-x: hidden;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 a {
@@ -54,7 +51,7 @@ h3 {
 
 #site-header {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "login northcoders-heading";
   text-align: center;
   padding: 15px;
@@ -101,9 +98,9 @@ h3 {
 #main-area {
   display: grid;
   grid-template-columns: 20vw 70vw;
+
   grid-template-areas: "sidebar";
   background-color: #fd653f;
-  padding-bottom: 100px;
 }
 
 #loading {
@@ -123,6 +120,7 @@ footer {
 
 footer > a {
   display: inline-block;
+  margin-bottom: 20px;
 }
 
 footer > a:hover {
@@ -288,7 +286,7 @@ li.comment-card > button:hover {
 
   #main-area {
     display: grid;
-    grid-template-columns: 100vw;
+    grid-template-columns: 1fr;
     grid-auto-rows: max-content;
   }
 
@@ -301,6 +299,7 @@ li.comment-card > button:hover {
     width: 100%;
     background: #fefefa;
     margin-top: -2px;
+    padding-left: 0px;
   }
 
   .nav-link {

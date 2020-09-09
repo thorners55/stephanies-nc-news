@@ -16,12 +16,10 @@ class LogIn extends Component {
   render() {
     return (
       <>
-        <span
-          className="fas fa-user"
-          role="img"
-          aria-label="Logged in as"
-        ></span>
-        <b> {this.props.username}</b>
+        <span className="fas fa-user" role="img" aria-label="Logged in as">
+          {" "}
+        </span>
+        Logged in as <b> {this.props.username}</b>
         <form onSubmit={this.handleSubmit}>
           <label>
             Change user:

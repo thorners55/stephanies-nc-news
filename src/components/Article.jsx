@@ -49,25 +49,32 @@ class Article extends Component {
         author,
         created_at,
       } = article;
+
       const created = moment(created_at).format("MMMM Do YYYY, h:mm a");
       topic = utils.capitaliseFunc(topic);
+      const username = `${author}`;
+
       return (
         <>
           <article>
             <header>
               <h2 className="subject">{title}</h2>
-              <VoteUpdater
-                votes={votes}
-                id={article_id}
-                commentOrArticle={"articles"}
-              />
-
               <p className="info">
-                <Link to={`/user/${author}`}>{author}</Link> in {topic}
+                by{" "}
+                <Link to={`/user/${author}`} aria-label={username}>
+                  {author}
+                </Link>{" "}
+                in {topic}
                 <br />
                 Created on {created}
               </p>
             </header>
+            <VoteUpdater
+              votes={votes}
+              id={article_id}
+              commentOrArticle={"articles"}
+            />
+
             <p>{body}</p>
           </article>
           <Comments articleId={article_id} username={this.props.username} />

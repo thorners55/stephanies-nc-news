@@ -30,6 +30,7 @@ class VoteUpdater extends Component {
           <button
             onClick={() => this.handleVote(1, "upvote")}
             name="upvote"
+            aria-label="up vote"
             disabled={upvote}
           >
             <span>
@@ -39,6 +40,7 @@ class VoteUpdater extends Component {
           <button
             onClick={() => this.handleVote(-1, "downvote")}
             name="downvote"
+            aria-label="down vote"
             disabled={downvote}
           >
             {" "}

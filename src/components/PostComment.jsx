@@ -32,6 +32,7 @@ class PostComment extends Component {
             minLength={3}
             name="body"
             placeholder="Type comment here..."
+            aria-label="new comment"
             onChange={this.handleChange}
             required
           ></textarea>

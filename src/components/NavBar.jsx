@@ -25,16 +25,13 @@ class NavBar extends Component {
         <ul id="link-list">
           <li>
             {" "}
-            <Link to="/" className="nav-link">
-              <span
-                className="fas fa-home"
-                role="img"
-                aria-label="News Home"
-              ></span>
+            <Link to="/" className="nav-link" role="img" aria-label="Home icon">
+              <span className="fas fa-home"></span>
             </Link>
           </li>
 
           {this.state.topics.map((slug) => {
+            console.log(slug);
             return (
               <li key={slug}>
                 <Link to={`/topics/${slug.toLowerCase()}`} className="nav-link">
