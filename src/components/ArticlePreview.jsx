@@ -22,7 +22,7 @@ function ArticlePreview(props) {
           <Link to={`/articles/${article_id}`}>{title}</Link>
         </h2>
 
-        <p id="preview">
+        <p>
           by <Link to={`/user/${author}`}>{author}</Link> in{" "}
           {utils.capitaliseFunc(topic)}, created {created}
           <br />
