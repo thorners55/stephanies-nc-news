@@ -49,9 +49,7 @@ class App extends Component {
               >
                 <span className="far fa-newspaper newspaper-icon"></span>
               </span>
-              <h1 id="site-title" aria-label="north coders news">
-                NORTHCODERS NEWS
-              </h1>
+              <h1 aria-label="north coders news">NORTHCODERS NEWS</h1>
             </Link>
           </div>
         </header>

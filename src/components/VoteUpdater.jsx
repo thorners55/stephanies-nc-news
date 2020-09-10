@@ -25,12 +25,12 @@ class VoteUpdater extends Component {
     return (
       <>
         <div className="votes">
-          <h4>{updatedVote} votes</h4>
+          <p>{updatedVote} votes</p>
 
           <button
             onClick={() => this.handleVote(1, "upvote")}
             name="upvote"
-            aria-label="up vote"
+            aria-label="up vote with smiley face"
             disabled={upvote}
           >
             <span>
@@ -40,7 +40,7 @@ class VoteUpdater extends Component {
           <button
             onClick={() => this.handleVote(-1, "downvote")}
             name="downvote"
-            aria-label="down vote"
+            aria-label="down vote with sad face"
             disabled={downvote}
           >
             {" "}

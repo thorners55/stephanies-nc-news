@@ -16,7 +16,7 @@ class LogIn extends Component {
   render() {
     return (
       <>
-        <span className="fas fa-user" role="img" aria-label="Logged in as">
+        <span className="fas fa-user" role="presentation">
           {" "}
         </span>
         Logged in as <b> {this.props.username}</b>

@@ -62,8 +62,14 @@ p {
   font-size: 1.6rem;
 }
 
-:focus {
-  border: 0.4rem solid #5e347f;
+textarea:focus,
+button:focus,
+button[type="submit"]:focus {
+  border: 0.4rem solid black;
+}
+select:focus,
+a:focus {
+  border: 0.3rem solid black;
 }
 
 /* Site heading - login and logo */
@@ -106,7 +112,7 @@ p {
   font-size: 5rem;
 }
 
-#site-title {
+h1 {
   color: black;
   font-size: 3rem;
   font-family: "Montserrat", sans-serif;
@@ -254,7 +260,7 @@ button:hover[type="submit"] {
   cursor: pointer;
 }
 
-.comment-card {
+#comment-card {
   padding: 2.5rem 0px;
   margin-right: 1rem;
   border-bottom: 0.2rem solid black;
