@@ -31,7 +31,6 @@ class NavBar extends Component {
           </li>
 
           {this.state.topics.map((slug) => {
-            console.log(slug);
             return (
               <li key={slug}>
                 <Link to={`/topics/${slug.toLowerCase()}`} className="nav-link">

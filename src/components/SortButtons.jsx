@@ -9,7 +9,6 @@ class SortButtons extends Component {
   handleClick = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
-    console.log(name, value, "handleClick");
     this.setState((currentState) => {
       return { ...currentState, [name]: value };
     });
@@ -21,7 +20,6 @@ class SortButtons extends Component {
       this.state.order !== prevState.order
     ) {
       const { getArticles, topic, username } = this.props;
-      console.log(this.state.sort, this.state.order);
       const { sort, order } = this.state;
       getArticles(topic, username, sort, order);
     }
