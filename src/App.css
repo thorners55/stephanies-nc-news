@@ -126,6 +126,10 @@ h1 {
   font-family: "Montserrat", sans-serif;
 }
 
+p {
+  line-height: 3rem;
+}
+
 /* Main area - global */
 
 #main-area {
