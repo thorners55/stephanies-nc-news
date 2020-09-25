@@ -1,6 +1,6 @@
 # Stephanie's NC News
 
-# How to run
+## How to run
 
 - You will need at least Node.js version 13
 
@@ -12,10 +12,10 @@
 - Install dependencies:
   npm install
 
-- To run the website on a local server
+- To run the website on a local server:
   npm start
 
-# General app information
+## General app information
 
 - Made as part of Northcoders coursework - created the API using PSQL, hosted using Heroku, deployed using Netlify. The repository for backend functionality can be found at https://github.com/thorners55/nc-news
 
@@ -29,7 +29,7 @@
 
 - Article, topic, and user request URLs work by chaining the everything after /api/ onto https://stephanies-nc-news.netlify.com , e.g. https://stephanies-nc-news.netlify.com/topics/cooking
 
-# Links
+## Links
 
 - Deployed version: https://stephanies-nc-news.netlify.com
 - Repository for backend API functionality https://github.com/thorners55/nc-news
