@@ -32,4 +32,4 @@
 ## Links
 
 - Deployed version: https://stephanies-nc-news.netlify.com
-- Repository for backend API functionality https://github.com/thorners55/nc-news
+- Repository for backend API functionality https://github.com/thorners55/be-stephanies-nc-news
